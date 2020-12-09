@@ -63,7 +63,7 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 										<div class="prd-bottom">
 											<a href="" class="social-info">
 												<span class="ti-bag"></span>
-												<p class="hover-text">Ajouter au panier</p>
+												<a class="hover-text">Ajouter au panier</a>
 											</a>
 										</div>
 									</div>
