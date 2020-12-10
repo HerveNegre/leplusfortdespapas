@@ -3,7 +3,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light main_box">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<a class="navbar-brand logo_h" href="index.html"><img src="" alt="logo"></a>
+				<a class="logo_papa-collapse" top="20px" href="{{ route('home') }}"><img src="images/logo_papa_light.png"  alt="logo"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="icon-bar"></span>
@@ -31,9 +31,6 @@
 								Contact
 							</a>
 						</li>
-					</ul>
-
-					<ul class="nav navbar-nav menu_nav ml-auto">
 						@guest
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('login') }}">
@@ -71,11 +68,12 @@
 								</a>
 							</li>
 					</ul>
+
 				</div>
 			</div>
 		</nav>
 	</div>
-	<div class="search_input" id="search_input_box">
+	{{-- <div class="search_input" id="search_input_box">
 		<div class="container">
 			<form class="d-flex justify-content-between">
 				<input type="text" class="form-control" id="search_input" placeholder="Search Here">
@@ -83,5 +81,5 @@
 				<span class="lnr lnr-cross" id="close_search" title="Close Search"></span>
 			</form>
 		</div>
-	</div>
+	</div> --}}
 </header>

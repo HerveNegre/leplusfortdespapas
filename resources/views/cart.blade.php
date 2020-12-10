@@ -59,15 +59,9 @@
                                 </tr>
                             @endforeach
                             <tr>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
+                                
+                               
+                                
                                 <td>
                                     <h5>Hors taxe</h5>
                                     <p>Taxe</p>
@@ -81,15 +75,9 @@
                             </tr>
                         
                             <tr class="out_button_area">
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
-                                <td>
-
-                                </td>
+                                
+                                
+                                
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="{{ route('products') }}">Retour aux Articles</a>

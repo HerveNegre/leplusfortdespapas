@@ -8,7 +8,24 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 
 -->
 	<!--================Single Product Area =================-->
-    <section class="lattest-product-arrea pb-40 category-list">
+	
+	
+	<div class="pages-title section-padding">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12">
+					<div class="pages-title-text text-center">
+						<h2></h2>
+						<ul class="text-left">
+							
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<section class="lattest-product-arrea pb-40 category-list">
             <div class="product_image_area">
                 <div class="container">
                     <div class="row s_product_inner">

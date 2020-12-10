@@ -18,6 +18,7 @@ Route::get('/contact', 'HomeController@contact')->name('contact');
 
 //Produits
 Route::get('/products', 'ProductsController@index')->name('products');
+Route::get('/search', 'ProductsController@search')->name('products.search');
 Route::get('/products/{product}', 'ProductsController@show')->name('singleProduct');
 
 //Panier
