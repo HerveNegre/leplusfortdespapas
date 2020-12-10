@@ -29,3 +29,39 @@
   .StripeElement--webkit-autofill {
     background-color: #fefde5 !important;
   }
+/**=======================================Page Home ===========================**/
+.homeMainTitle {
+  text-align: center;
+}
+.homeMainTitleS {
+  border: groove 2px;
+  box-shadow: 6px 6px 0px black;
+  display: inline-block;
+  margin-left:580px;
+  margin-right:580px; 
+  background: #fff
+}
+.homePreambule {
+  text-align: center;
+  margin-left: 5px;
+  margin-right: 5px;
+  font-weight: bold;
+}
+.conseils {
+  text-align: justify;
+  margin-left: 80px;
+  margin-right: 80px;
+  list-style-type: disc;
+}
+.apparte {
+  text-align: justify;
+  border: groove 1px lightblue;
+  box-shadow: 6px 6px 0px black;
+  background-color: lightskyblue;
+  display: inline-block;
+  color: black;
+  padding-left: 35px;
+  padding-right: 35px;
+  border-radius: 30px;
+  border-width: 2px;
+}
