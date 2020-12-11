@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 use App\Product;
-use Illuminate\Support\Facades\View;
+
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
@@ -15,9 +16,8 @@ class CartController extends Controller
         foreach ($cart as $value) {
             $product = Product::where('id', $value->id)->first();
             array_push($productsList, $product);
-            
         }
-        return View::make('cart')->with('products', $productsList);
+            return View::make('cart')->with('products', $productsList);
     }
 
     /**

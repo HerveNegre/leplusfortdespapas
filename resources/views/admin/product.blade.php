@@ -108,8 +108,8 @@
       <div class="panel-header panel-header-lg">
         <canvas id="bigDashboardChart"></canvas>
       </div>
-      <div class="content d-flex justify-content-center">
-          <div class="col-md-responsive">
+      <div class="content-responsive">
+          <div class="col9-md-responsive">
             <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>

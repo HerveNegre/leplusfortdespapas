@@ -42,9 +42,9 @@
                 <div class="single-footer-widget">
                     <h6>Suivez nous !</h6>
                     <div class="footer-social d-flex align-items-center">
-                        <a href="#"><i class="fa fa-facebook"></i></a>
-                        <a href="#"><i class="fa fa-instagram"></i></a>
-                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/lplusfort.despapa.5"><i class="fa fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/leplusfortdespapa/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://twitter.com/Leplusfortdesp1"><i class="fa fa-twitter"></i></a>
                     </div>
                 </div>
             </div>

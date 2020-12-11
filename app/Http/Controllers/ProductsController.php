@@ -17,6 +17,7 @@ class ProductsController extends Controller
     {
         $products = Product::all();
         $categories = Category::all();
+        
         return view('products', [
             'products'   => $products,
             'categories' => $categories
@@ -36,6 +37,26 @@ class ProductsController extends Controller
             'product'  => $product
         ]);
     }
+    public function search()
+{
+    $q=request()->input('q');
+
+    $categories = Category::all();
+    $products = Product::where('name', 'like', "%$q%")
+                ->orWhere('details', 'like', "%$q%")
+                ->orWhere('description', 'like', "%$q%")
+                ->paginate(9);
+
+                return view('products.search', [
+                    'products'   => $products,
+                    'categories' => $categories
+                ]);
+                    
+                    
+    
+                    
+               
+}
 
     /**
      * Show the form for editing the specified resource.
