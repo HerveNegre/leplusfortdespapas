@@ -125,7 +125,7 @@
       </div>
       <div class="content">
           <div class="col-md-responsive">
-            <div class="card-responsive">
+            <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>
                 <h4 class="card-title"> Liste des Utilisateurs</h4>

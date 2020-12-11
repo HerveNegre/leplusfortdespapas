@@ -7,7 +7,12 @@
 ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 
 -->
-
+    <div class="container">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </div>
     <section class="login_box_area section_gap">
         <div class="container">
             <div class="row">

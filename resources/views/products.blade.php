@@ -31,27 +31,27 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 		<div class="row">
 			<div class="col-sm-4">
 				<div class="single-colect banner collect-one">
-					<a href="#"><img src="images/4.jpg" alt="" /></a>
+					<a href="{{ route('singleProduct', 'raton') }}"><img src="images/4.jpg" alt="" href="{{ route('singleProduct', 'raton') }}"/></a>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="colect-text ">
 					<h4><a href="#">Willy le Raton Laveur !</a></h4>
 					<h5>Thermomètre de bain <br /> notre nouveautée !</h5>
-					<a href="#"><i class="mdi mdi-arrow-right"></i></a>
+					<a href="{{ route('singleProduct', 'raton') }}"><i class="mdi mdi-arrow-right"></i></a>
 				</div>
 				<div class="collect-img banner margin single-colect">
-					<a href="#"><img src="images/5.jpg" alt="" /></a>
+					<a href="{{ route('singleProduct', 'babycook') }}"><img src="images/5.jpg" alt=""  /></a>
 				</div>
 			</div>
 			<div class="col-sm-4">
 				<div class="collect-img banner single-colect">
-					<a href="#"><img src="images/6.jpg" alt="" /></a>
+					<a href="{{ route('singleProduct', 'babyphone') }}"><img src="images/6.jpg" alt="" href="{{ route('singleProduct', 'babyphone') }}" /></a>
 				</div>
 				<div class="colect-text ">
 					<h4><a href="#">Les indispenssables!</a></h4>
-					<p>Rien de tel que notre sélection d'indispenssable pour être le plus fort des papas !</p>
-					<a href="#"><i class="mdi mdi-arrow-right"></i></a>
+					<h5>Rien de tel que notre sélection d'indispenssable pour être le plus fort des papas !</h5>
+					<a href="{{ route('singleProduct', 'babycook') }}"><i class="mdi mdi-arrow-right"></i></a>
 				</div>
 			</div>
 		</div>
@@ -162,7 +162,11 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 													<button class="papa_mid" type="submit"><i class="mdi mdi-cart"></i></button>
 												</form>
 												</a>
-												<a href="#" data-toggle="modal" data-target="#quick-view"><i class="mdi mdi-eye"></i></a>
+												<a href="#" data-toggle="modal" data-target="#quick-view-{{ $product->id }}"><i class="mdi mdi-eye"></i>
+												<input type="hidden" name="id" value="{{ $product->id }}">
+												<input type="hidden" name="name" value="{{ $product->name }}">
+												<input type="hidden" name="price" value="{{ $product->price }}">
+												<input type="hidden" name="image" value="{{ $product->image }}"></a>
 												<a href="#"><i class="mdi mdi-heart"></i></a>
 											</div>
 										</div>
@@ -176,6 +180,111 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 												<i class="mdi mdi-star-outline"></i>
 											</div>
 											<span>{{ $product->price }}€</span>
+										</div>
+									</div>
+								</div>
+								<div class="product-details quick-view modal animated zoomInUp" id="quick-view-{{ $product->id }}">
+									<div class="container">
+										<div class="row">
+											<div class="col-xs-12">
+												<div class="d-table">
+													<div class="d-tablecell">
+														<div class="modal-dialog">
+															<div class="main-view modal-content">
+																<div class="modal-footer" data-dismiss="modal">
+																	<span><h4>x</h4></span>
+																</div>
+																<div class="row">
+																	<div class="col-xs-12 col-sm-5 col-md-4">
+																		<div class="quick-image">
+																			<div class="single-quick-image text-center">
+																				<div class="list-img">
+																					<div class="product-img tab-content">
+																						<div class="simpleLens-container tab-pane fade in" id="q-sin-1">
+																							<div class="pro-type">
+																								
+																							</div>
+																							<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="{{ asset('images/'.$product->image) }}" alt="" class="simpleLens-big-image"></a>
+																						</div>
+																						<div class="simpleLens-container tab-pane active fade in" id="q-sin-2">
+																							<div class="pro-type sell">
+																								<span>sell</span>
+																							</div>
+																							<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="{{ asset('images/'.$product->image) }}" alt="" class="simpleLens-big-image"></a>
+																						</div>
+																						<div class="simpleLens-container tab-pane fade in" id="q-sin-3">
+																							<div class="pro-type">
+																								<span>-15%</span>
+																							</div>
+																							<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="{{ asset('images/'.$product->image) }}" alt="" class="simpleLens-big-image"></a>
+																						</div>
+																						<div class="simpleLens-container tab-pane fade in" id="q-sin-4">
+																							<div class="pro-type">
+																								<span>new</span>
+																							</div>
+																							<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="{{ asset('images/'.$product->image) }}" alt="" class="simpleLens-big-image"></a>
+																						</div>
+																					</div>
+																				</div>
+																			</div>
+																			<div class="quick-thumb">
+																				<ul class="product-slider">
+																					<li><a data-toggle="tab" href="#q-sin-1"> <img src="{{ asset('images/'.$product->image) }}" alt="quick view" /> </a></li>
+																					<li class="active"><a data-toggle="tab" href="#q-sin-2"> <img src="{{ asset('images/'.$product->image) }}" alt="small image" /> </a></li>
+																					<li><a data-toggle="tab" href="#q-sin-3"> <img src="{{ asset('images/'.$product->image) }}" alt="small image" /> </a></li>
+																					<li><a data-toggle="tab" href="#q-sin-4"> <img src="{{ asset('images/'.$product->image) }}" alt="small image" /> </a></li>
+																				</ul>
+																			</div>
+																		</div>						
+																	</div>
+																	<div class="col-xs-12 col-sm-7 col-md-8">
+																		<div class="quick-right">
+																			<div class="list-text">
+																				<h3>{{ $product->name }}</h3>
+																				<span> </span>
+																				<div class="ratting floatright">
+																					<p>( 27 notes )</p>
+																					<i class="mdi mdi-star"></i>
+																					<i class="mdi mdi-star"></i>
+																					<i class="mdi mdi-star"></i>
+																					<i class="mdi mdi-star-half"></i>
+																					<i class="mdi mdi-star-outline"></i>
+																				</div>
+																				<h5> {{ $product->price }}</h5>
+																				<p>{{ $product->details }}</p>
+																				
+																				<div class="list-btn">
+																					<form class="papa_mid" action="{{ route('cart.store') }}" method="post">
+																						{{ csrf_field() }}
+																						<input type="hidden" name="id" value="{{ $product->id }}">
+																						<input type="hidden" name="name" value="{{ $product->name }}">
+																						<input type="hidden" name="price" value="{{ $product->price }}">
+																						<input type="hidden" name="image" value="{{ $product->image }}">
+																						<button class="papa_mid" type="submit"><i class="fas fa-cart-arrow-down"></i></button>
+																					</form>
+																					
+																					
+																				</div>
+																				<div class="share-tag clearfix">
+																					<ul class="blog-share floatleft">
+																						<li><h5>share </h5></li>
+																						<li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
+																						<li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
+																						<li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
+																						<li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
+																						<li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
+																						<li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+																					</ul>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -211,114 +320,10 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 </div>
 <!-- product-grid-view content section end -->
 <!-- quick view start -->
-<div class="product-details quick-view modal animated zoomInUp" id="quick-view">
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12">
-				<div class="d-table">
-					<div class="d-tablecell">
-						<div class="modal-dialog">
-							<div class="main-view modal-content">
-								<div class="modal-footer" data-dismiss="modal">
-									<span>x</span>
-								</div>
-								<div class="row">
-									<div class="col-xs-12 col-sm-5 col-md-4">
-										<div class="quick-image">
-											<div class="single-quick-image text-center">
-												<div class="list-img">
-													<div class="product-img tab-content">
-														<div class="simpleLens-container tab-pane fade in" id="q-sin-1">
-															<div class="pro-type">
-																
-															</div>
-															<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="img/products/z1.jpg" alt="" class="simpleLens-big-image"></a>
-														</div>
-														<div class="simpleLens-container tab-pane active fade in" id="q-sin-2">
-															<div class="pro-type sell">
-																<span>sell</span>
-															</div>
-															<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="img/products/z2.jpg" alt="" class="simpleLens-big-image"></a>
-														</div>
-														<div class="simpleLens-container tab-pane fade in" id="q-sin-3">
-															<div class="pro-type">
-																<span>-15%</span>
-															</div>
-															<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="img/products/z3.jpg" alt="" class="simpleLens-big-image"></a>
-														</div>
-														<div class="simpleLens-container tab-pane fade in" id="q-sin-4">
-															<div class="pro-type">
-																<span>new</span>
-															</div>
-															<a class="simpleLens-image" data-lens-image="{{ asset('images/'.$product->image) }}" href="#"><img src="img/products/z4.jpg" alt="" class="simpleLens-big-image"></a>
-														</div>
-													</div>
-												</div>
-											</div>
-											<div class="quick-thumb">
-												<ul class="product-slider">
-													<li><a data-toggle="tab" href="#q-sin-1"> <img src="img/products/s1.jpg" alt="quick view" /> </a></li>
-													<li class="active"><a data-toggle="tab" href="#q-sin-2"> <img src="img/products/s2.jpg" alt="small image" /> </a></li>
-													<li><a data-toggle="tab" href="#q-sin-3"> <img src="img/products/s3.jpg" alt="small image" /> </a></li>
-													<li><a data-toggle="tab" href="#q-sin-4"> <img src="img/products/s4.jpg" alt="small image" /> </a></li>
-												</ul>
-											</div>
-										</div>						
-									</div>
-									<div class="col-xs-12 col-sm-7 col-md-8">
-										<div class="quick-right">
-											<div class="list-text">
-												<h3>{{ $product->name }}</h3>
-												<span> </span>
-												<div class="ratting floatright">
-													<p>( 27 notes )</p>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star"></i>
-													<i class="mdi mdi-star-half"></i>
-													<i class="mdi mdi-star-outline"></i>
-												</div>
-												<h5> {{ $product->price }}</h5>
-												<p>{{ $product->details }}</p>
-												
-												<div class="list-btn">
-													<form class="papa_mid" action="{{ route('cart.store') }}" method="post">
-														{{ csrf_field() }}
-														<input type="hidden" name="id" value="{{ $product->id }}">
-														<input type="hidden" name="name" value="{{ $product->name }}">
-														<input type="hidden" name="price" value="{{ $product->price }}">
-														<input type="hidden" name="image" value="{{ $product->image }}">
-														<button class="papa_mid" type="submit"><i class="fas fa-cart-arrow-down"></i></button>
-													</form>
-													
-													
-												</div>
-												<div class="share-tag clearfix">
-													<ul class="blog-share floatleft">
-														<li><h5>share </h5></li>
-														<li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
-														<li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
-														<li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
-														<li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
-														<li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
-														<li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
-													</ul>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 
 <br><br><br><br><br>
-	<div class="container">
+	{{-- <div class="container">
 		<div class="row">
 			<div class="col-xl-3 col-lg-4 col-md-5">
 				<!--------------------------------------------------------------side_bar categories-------------------------------------------------------------->
@@ -410,5 +415,5 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 				<!-- End Filter Bar -->
 			</div>
 		</div>
-	</div>
+	</div> --}}
 @endsection

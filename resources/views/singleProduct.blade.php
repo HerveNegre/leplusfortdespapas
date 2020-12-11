@@ -10,21 +10,6 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 	<!--================Single Product Area =================-->
 	
 	
-	<div class="pages-title section-padding">
-		<div class="container">
-			<div class="row">
-				<div class="col-xs-12">
-					<div class="pages-title-text text-center">
-						<h2></h2>
-						<ul class="text-left">
-							
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
 	<section class="lattest-product-arrea pb-40 category-list">
             <div class="product_image_area">
                 <div class="container">
@@ -49,7 +34,7 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
                                 <ul class="list">
                                 	<li><a class="active" href="#"><span>Categorie</span> : {{ $product->category->name }}</a></li>
                                 </ul>
-                                <p>{{ $product->details }}</p>
+                                <p class="blog_papa">{{ $product->details }}</p>
                                 <div class="card_area d-flex align-items-center">
                                     <form action="{{ route('cart.store') }}" method="post">
 										{{ csrf_field() }}

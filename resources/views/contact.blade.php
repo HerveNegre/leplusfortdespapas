@@ -8,16 +8,17 @@
          data-mlat="40.701083" data-mlon="-74.1522848">
         </div>
         <div class="row">
-            <div class="col-lg-3">
+            <div class="col-lg-5">
                 <div class="contact_info">
                     <div class="info_item">
                         <i class="fas fa-envelope"></i>
                         <h6><a href="#">leplusfortdespapas@hotmail.fr</a></h6>
-                        <p>Envoyez-nous votre demande</p>
+                        <p class="blog_papa">Envoyez-nous votre demande</p>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-9">
+            <br/>
+            <div class="col-lg-12">
                 <form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
                     {{ csrf_field() }}
                     <div class="col-md-6">

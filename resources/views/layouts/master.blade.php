@@ -64,7 +64,7 @@
 	<script src="{{ asset('js/load-more.js') }}"></script>
 	<script src="{{ asset('js/plugins.js') }}"></script>
 	<script src="{{ asset('js/main.js') }}"></script>
-	
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
 	
 
 	

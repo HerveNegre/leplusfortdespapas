@@ -14,13 +14,13 @@
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 					<ul class="nav navbar-nav menu_nav mr-auto ml-5">
 						<li class="nav-item">
-							<a class="nav-link" href="{{ route('home') }}">
+							<a class="nav-link"  style="color:#f6bc30" href="{{ route('home') }}">
 								<i class="fas fa-home"></i>
 								Accueil
 							</a>
 						</li>
 						<li class="nav-item submenu dropdown">
-							<a href="{{ route('products') }}" class="nav-link">
+							<a style="color:#154c7b" href="{{ route('products') }}" class="nav-link">
 								<i class="fas fa-shopping-bag"></i>
 								Produits
 							</a>
@@ -59,7 +59,7 @@
 							</li>
 						@endguest
 							<li class="nav-item">
-								<a class="nav-link" href="{{ route('cart') }}">
+								<a class="nav-link" style="color:#1b838c" href="{{ route('cart') }}">
 									<i class="fas fa-shopping-cart"></i>
 									Mon panier
 									@if(Cart::instance('default')->count() > 0)
@@ -73,6 +73,7 @@
 			</div>
 		</nav>
 	</div>
+	
 	{{-- <div class="search_input" id="search_input_box">
 		<div class="container">
 			<form class="d-flex justify-content-between">

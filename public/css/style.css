@@ -106,7 +106,7 @@ a:active, a:hover {
 .animated {animation-duration: 1.5s;}
 i{font-size:16px;}
 p{
-	color:#666666;
+	color:#e8e6d4;
 	font-size:13px;
 	font-weight:400;
 	line-height:20px;
@@ -1012,7 +1012,7 @@ footer ,.latest-blog,.single-products,.service-text,.coming-product.coming-produ
     margin-bottom: 40px;
 }
 .footer-text i {
-    background: #666 none repeat scroll 0 0;
+    background: #1c204d none repeat scroll 0 0;
     border-radius: 3px;
     color: #fff;
     float: left;
@@ -1063,7 +1063,7 @@ footer ,.latest-blog,.single-products,.service-text,.coming-product.coming-produ
 .header-top-two .middel-top .right a ,.header-top-two .middel-top .left p{
   line-height: 50px;
 }
-.header-top-two,.footer-bottom {background: #eee none repeat scroll 0 0;}
+.header-top-two,.footer-bottom {background: #1c204d none repeat scroll 0 0;}
 .header-two  .logo, .header-two  .cart-itmes, .header-two  .mainmenu a{line-height:120px;}
 .header-two  .mainmenu li > ul > li > a{line-height:1;}
 .header-two .mainmenu li:first-child,.header-two .mainmenu li{border:0;}
@@ -1231,7 +1231,7 @@ footer ,.latest-blog,.single-products,.service-text,.coming-product.coming-produ
 }
 .footer-two .footer-top,.pages  {background: #F5F5F5;}
 /* pages title */
-.pages-title {background: rgba(0, 0, 0, 0) url("img/page-bg.png") repeat scroll 0 0;}
+.pages-title {background: rgba(0, 0, 0, 0) url("../img/page-bg.png") repeat scroll 0 0;}
 .pages-title ul.text-left {
     position: relative;
     top: 50px;
@@ -2156,6 +2156,25 @@ select:focus{outline:none!important;border-color:transparent;border:0;}
     background: #f6bc30 none repeat scroll 0 0;
 	color: #fff;
 	border-radius: 50%;
+}
+.photo_papa {
+
+	max-width: 100%;
+    max-height: 100%;
+}
+.papa_light {
+
+	max-width: 60%;
+    max-height: 60%;
+
+}
+.blog_papa {
+	color:black;
+
+	
+}
+p.blog_papa {
+	color: #1c204d;
 }
 /*====================================================================
 							[ END ]

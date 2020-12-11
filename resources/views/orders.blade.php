@@ -1,6 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="container">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </div>
     <div class="container my-5">
         <div class="orders">
             <h2 class="text-center">Détails de commande</h2>

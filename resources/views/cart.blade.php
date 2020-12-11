@@ -1,6 +1,12 @@
 @extends('layouts.master')
 
 @section('content')
+<div class="container">
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    </div>
 <section class="cart_area">
     <div class="container">
         @if($message = Session::get('success'))
@@ -64,12 +70,12 @@
                                 
                                 <td>
                                     <h5>Hors taxe</h5>
-                                    <p>Taxe</p>
+                                    <p class="blog_papa">Taxe</p>
                                     <h4>Total du panier</h4>
                                 </td>
                                 <td>
                                     <h5>{{ Cart::subtotal() }} €</h5>
-                                    <p>{{ Cart::tax() }} €</p>
+                                    <p class="blog_papa">{{ Cart::tax() }} €</p>
                                     <h4>{{ Cart::total() }} €</h4>
                                 </td>
                             </tr>
