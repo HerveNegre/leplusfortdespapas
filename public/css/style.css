@@ -2176,6 +2176,12 @@ select:focus{outline:none!important;border-color:transparent;border:0;}
 p.blog_papa {
 	color: #1c204d;
 }
+
+.img_papa{
+	width:50%;
+	display: flex;
+	justify-content: center;
+}
 /*====================================================================
 							[ END ]
 ======================================================================*/

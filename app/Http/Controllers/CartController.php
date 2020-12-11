@@ -1,15 +1,24 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
+use Illuminate\Support\Facades\View;
 
 class CartController extends Controller
 {
     public function index()
     {
-        return view('cart');
+        $cart = Cart::content();
+
+        $productsList = [];
+        foreach ($cart as $value) {
+            $product = Product::where('id', $value->id)->first();
+            array_push($productsList, $product);
+        }
+
+        return View::make('cart')->with('products', $productsList);
     }
 
     /**

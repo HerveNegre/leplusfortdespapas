@@ -52,9 +52,9 @@ Route::get('/logout', function () {
 })->name('logout');
 
 // //User Auth
-Route::group(['middleware' => ['auth', 'isUser']], function () {
-    Route::get('/', 'HomeController@home')->name('home');
-});
+// Route::group(['middleware' => ['auth', 'isUser']], function () {
+//     Route::get('/', 'HomeController@home')->name('home');
+// });
 
 //Admin Auth
 Route::group(['middleware' => ['auth', 'admin']], function () {

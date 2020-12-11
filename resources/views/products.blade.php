@@ -268,12 +268,9 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 																				<div class="share-tag clearfix">
 																					<ul class="blog-share floatleft">
 																						<li><h5>share </h5></li>
-																						<li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
-																						<li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
-																						<li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
-																						<li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
-																						<li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
-																						<li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+																						<li><a href="https://www.facebook.com/lplusfort.despapa.5"><i class="mdi mdi-facebook"></i></a></li>
+																						<li><a href="https://twitter.com/Leplusfortdesp1"><i class="mdi mdi-twitter"></i></a></li>
+																						<li><a href="https://www.instagram.com/leplusfortdespapa/"><i class="mdi mdi-instagram"></i></a></li>
 																					</ul>
 																				</div>
 																			</div>

@@ -33,9 +33,9 @@
                                 <tr>
                                     <td>
                                         <div class="media">
-                                            <div class="d-flex">
+                                            {{-- <div class="d-flex">
                                                 <img class="img-fluid" src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}">
-                                            </div>
+                                            </div> --}}
                                             <div class="media-body">
                                                 <h4>{{ $product->name }}</h4>
                                                 <p>{{ $product->details }}</p>
@@ -45,7 +45,8 @@
                                     <td>
                                         <h5>{{ $product->price }} €</h5>
                                     </td>
-                                    <td>
+                                    
+                                    <td> 
                                         <div class="product_count">
                                             <input disabled type="text" name="qty" id="sst" maxlength="12" value="x {{ $product->qty }}" title="Quantity:"
                                                 class="input-text qty">

@@ -10,9 +10,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-xs-12">
-                            <div class="pages-title-text text-center">
-                                <br/>
-                                <br/>
+                            <div class="pages-title-text text-center mt-5">
+                                
                                 <img src="images/logo_papa_02.png">
                                 <br/>
                                 <br/>
@@ -92,12 +91,9 @@
                                             <div class="share-tag clearfix">
                                             <ul class="blog-share floatleft">
                                                 <li><h5>share </h5></li>
-                                                <li><a href="#"><i class="mdi mdi-facebook"></i></a></li>
-                                                <li><a href="#"><i class="mdi mdi-twitter"></i></a></li>
-                                                <li><a href="#"><i class="mdi mdi-linkedin"></i></a></li>
-                                                <li><a href="#"><i class="mdi mdi-vimeo"></i></a></li>
-                                                <li><a href="#"><i class="mdi mdi-dribbble"></i></a></li>
-                                                <li><a href="#"><i class="mdi mdi-instagram"></i></a></li>
+                                                <li><a href="https://www.facebook.com/lplusfort.despapa.5"><i class="mdi mdi-facebook"></i></a></li>
+                                                <li><a href="https://twitter.com/Leplusfortdesp1"><i class="mdi mdi-twitter"></i></a></li>
+                                                <li><a href="https://www.instagram.com/leplusfortdespapa/"><i class="mdi mdi-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                         
@@ -229,7 +225,7 @@
                                             Prendre le temps de jouer avec son enfant c'est capitaliser sur sa sociabilité ...</p>
                                         </div>
                                         <div class="date-read clearfix">
-                                            <a href="#"><i class="mdi mdi-clock"></i> jun 22, 2016</a>
+                                            <a href="#"><i class="mdi mdi-clock"></i> jun 22, 2020</a>
                                             <a href="single-blog.html">En savoir plus</a>
                                         </div>
                                     </div>

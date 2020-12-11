@@ -3,10 +3,11 @@
 @section('content')
 <br><br><br><br>
 <section class="contact_area section_gap_bottom">
-    <div class="container">
-        <div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="2 rue du Professeur Charles Appleton, 69007 Lyon, France."
+    <div class="container mt-5">
+        <img class="img_papa d-flex" src="images/logo_papa_02.png">
+        {{-- <div id="mapBox" class="mapBox" data-lat="40.701083" data-lon="-74.1522848" data-zoom="13" data-info="2 rue du Professeur Charles Appleton, 69007 Lyon, France."
          data-mlat="40.701083" data-mlon="-74.1522848">
-        </div>
+        </div> --}}
         <div class="row">
             <div class="col-lg-5">
                 <div class="contact_info">

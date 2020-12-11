@@ -3,7 +3,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light main_box">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<a class="logo_papa-collapse" top="20px" href="{{ route('home') }}"><img src="images/logo_papa_light.png"  alt="logo"></a>
+				<a class="logo_papa-collapse" top="20px" href="{{ route('home') }}"><img src="{{ asset('images/logo_papa_light.png') }}"  alt="logo"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="icon-bar"></span>
