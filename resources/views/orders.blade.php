@@ -14,9 +14,8 @@
                 <div class="d-flex justify-content-between my-5 px-5">
                     <h4>
                         <i class="fas fa-receipt"></i>
-                        Commande 4867
+                        
                     </h4>
-                    <h4>Date : 15/10/2020</h4>
                 </div>
                 <table class="table">
                     <thead>
@@ -28,14 +27,14 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Nom du Produit</td>
+                            <td>Babyphone</td>
                             <td>x 1</td>
-                            <td>6 €</td>
+                            <td>15 €</td>
                         </tr>
                         <tr>
                             <td><b>Total de la commande</b></td>
                             <td></td>
-                            <td>6 €</td>
+                            <td>15 €</td>
                         </tr>
                     </tbody>
 

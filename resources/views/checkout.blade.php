@@ -43,27 +43,27 @@
                     <form class="row contact_form" action="{{ route('checkout.store') }}" method="POST" id="payment-form">
                         {{ csrf_field() }}
                         <div class="col-md-6 form-group p_star">
-                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nom" value="{{ old('first_name') }}">
+                            <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Nom" value="{{ old('first_name') }}" required>
                         </div>
                         <div class="col-md-6 form-group p_star">
-                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Prénom" value="{{ old('last_name') }}">
+                            <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Prénom" value="{{ old('last_name') }}" required>
                         </div>
                         <div class="col-md-6 form-group p_star">
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Téléphone" value="{{ old('phone') }}">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="Téléphone" value="{{ old('phone') }}" required>
                         </div>
                         <div class="col-md-6 form-group p_star">
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
                         </div>
                     
                         <!-- Adresse de livraison -->
                         <div class="col-md-12 form-group p_star" id="delivery_address">
                             <label class="p_star"><strong>Adresse de livraison</strong> <i class="fas fa-star-of-life" style="color:rgb(250, 114, 114);"></i></label>
-                            <input type="text" class="form-control p_star" id="delivery_street" name="delivery_street" placeholder="Adresse" value="{{ old('delivery_street') }}">
-                            <input type="text" class="form-control p_star" id="delivery_street2" name="delivery_street2" placeholder="Complement d'adresse" value="{{ old('delivery_street2') }}">
-                            <input type="text" class="form-control p_star" id="delivery_zip_code" name="delivery_zip_code" placeholder="Code postal" value="{{ old('delivery_zip_code') }}">
-                            <input type="text" class="form-control p_star" id="delivery_city" name="delivery_city" placeholder="Ville" value="{{ old('delivery_city') }}">
+                            <input type="text" class="form-control p_star" id="delivery_street" name="delivery_street" placeholder="Adresse" value="{{ old('delivery_street') }}" required>
+                            <input type="text" class="form-control p_star" id="delivery_street2" name="delivery_street2" placeholder="Complement d'adresse" value="{{ old('delivery_street2') }}" required>
+                            <input type="text" class="form-control p_star" id="delivery_zip_code" name="delivery_zip_code" placeholder="Code postal" value="{{ old('delivery_zip_code') }}" required>
+                            <input type="text" class="form-control p_star" id="delivery_city" name="delivery_city" placeholder="Ville" value="{{ old('delivery_city') }}" required>
                             <label class="mt-3">Pays</label>
-                            <select class="country_select p_star" id="delivery_country" name="delivery_country" value="{{ old('delivery_country') }}">
+                            <select class="country_select p_star" id="delivery_country" name="delivery_country" value="{{ old('delivery_country') }}" required>
                                 <option value="Allemagne">Allemagne</option>
                                 <option value="Belgique">Belgique</option>
                                 <option value="Espagne">Espagne</option>
@@ -75,12 +75,12 @@
                         <!-- Adresse de facturation -->
                         <div class="col-md-12 form-group p_star" id="bill_address">
                             <label class="p_star"><strong>Adresse de facturation</strong> <i class="fas fa-star-of-life" style="color:rgb(250, 114, 114);"></i></label>
-                            <input type="text" class="form-control p_star" id="bill_street" name="bill_street" placeholder="Adresse" value="{{ old('bill_street') }}">
-                            <input type="text" class="form-control p_star" id="bill_street2" name="bill_street2" placeholder="Complement d'adresse" value="{{ old('bill_street2') }}">
-                            <input type="text" class="form-control p_star" id="bill_zip_code" name="bill_zip_code" placeholder="Code postal" value="{{ old('bill_zip_code') }}">
-                            <input type="text" class="form-control p_star" id="bill_city" name="bill_city" placeholder="Ville" value="{{ old('bill_city') }}">
+                            <input type="text" class="form-control p_star" id="bill_street" name="bill_street" placeholder="Adresse" value="{{ old('bill_street') }}" required>
+                            <input type="text" class="form-control p_star" id="bill_street2" name="bill_street2" placeholder="Complement d'adresse" value="{{ old('bill_street2') }}" required>
+                            <input type="text" class="form-control p_star" id="bill_zip_code" name="bill_zip_code" placeholder="Code postal" value="{{ old('bill_zip_code') }}" required>
+                            <input type="text" class="form-control p_star" id="bill_city" name="bill_city" placeholder="Ville" value="{{ old('bill_city') }}" required>
                             <label class="mt-3">Pays</label>
-                            <select class="country_select p_star" id="bill_country" name="bill_country" value="{{ old('bill_country') }}">
+                            <select class="country_select p_star" id="bill_country" name="bill_country" value="{{ old('bill_country') }}" required>
                                 <option value="Allemagne">Allemagne</option>
                                 <option value="Belgique">Belgique</option>
                                 <option value="Espagne">Espagne</option>
@@ -126,13 +126,13 @@
                                 <a href="#">Taxe <span>{{ Cart::tax() }}</span></a>
                             </li>
                             <li>
-                                <a href="#">Total <span>{{ Cart::total() }}</span></a>
+                                <a href="#" name="totalCart">Total <span>{{ Cart::total() }}</span></a>
                             </li>
                             <li>
                                 <div class="row mt-4">
                                     <a class="mr-auto ml-3" href="#">Livraison</a>
                                     <span class="ml-5 mt-2"><b><h4>Offerte</h4></b></span>
-                                    <img src="{{ asset('images/smile.gif') }}" alt="smile" style="width: 20%">
+                                    <img src="images/smile.gif" alt="smile" style="width: 20%">
                                 </div>
                             </li>
                         </ul>

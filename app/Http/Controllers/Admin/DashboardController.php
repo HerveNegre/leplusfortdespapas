@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Product;
-//use App\Categories;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
-use Intervention\Image\ImageManagerStatic as Image;
-use Illuminate\Support\Facades\Input;
+
 
 class DashboardController extends Controller
 {
@@ -80,66 +78,136 @@ class DashboardController extends Controller
      */
     public function productAdminAdd(Request $request)
     {
-        if ($request->isMethod('post')) {
-            $data                 = $request->all();
-            $product              = new Product;
-            $product->name        = $data['name'];
-            $product->slug        = $data['slug'];
-            $product->details     = $data['details'];
-            $product->price       = $data['price'];
-            $product->category_id = $data['category_id'];
-
-            if (!empty($data['description'])) {
-                $product->description = $data['description'];
-            } else {
-                $product->description = "";
-            }
-            if ($request->hasFile('image')) {
-                echo $img_tmp = Input::file('image');
-                if($img_tmp->isValid()) {
-
-                    //chemin vers le fichier des images
-                    $extension = $img_tmp->getClientOriginalExtension();
-                    $filename = rand(111,99999). '.'.$extension;
-                    $img_path = 'public/images/'.$filename;
-
-                    //image redimensionner
-                    Image::make($img_tmp)->resize(500,500)->save($img_path);
-                    $product->image = $filename;
-                }
-            }
-            $product->save();
-            return redirect('/productAdmin')->with('status', 'Nouveau produit ajouté');
-        }
         return view('admin.product-add');
     }
 
-    public function productAdminEdit(Request $request, $id)
+    public function create(Request $request)
     {
-        $products = Product::findOrFail($id);
+        $this->validate($request, [
+            'name'        => 'required',
+            'slug'        => 'required',
+            'details'     => 'required',
+            'price'       => 'required',
+            'category_id' => 'required',
+            'description' => 'required',
+            'image'       => 'required'
+        ]);
+
+        $products = new Product;
+
+        $products->name        = $request->input('name');
+        $products->slug        = $request->input('slug');
+        $products->details     = $request->input('details');
+        $products->price       = $request->input('price');
+        $products->category_id = $request->input('category_id');
+        $products->description = $request->input('description');
+    
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension(); //extension de l'image
+            $fileName = time().'.'.$extension;
+            $file->move('images/', $fileName);
+            $products->image = $fileName;
+        }
+
+        $products->save();
+        return redirect('/productAdmin')->with('success', 'Nouveau produit ajouté !');
+    }
+
+    public function productAdminEdit($id)
+    {
+        $products = Product::find($id);
         return view('admin.product-edit')->with('products', $products);
     }
 
     public function productAdminUpdate(Request $request, $id)
     {
         $products               = Product::find($id);
+
         $products->name         = $request->input('name');
         $products->slug         = $request->input('slug');
         $products->details      = $request->input('details');
         $products->price        = $request->input('price');
         $products->description  = $request->input('description');
-        $products->categorie_id = $request->input('categorie_id');
-        $products->image        = $request->input('image');
-
-        $products->update();
+        $products->category_id  = $request->input('category_id');
         
-        return redirect('/productAdmin')->with('status', 'Modifications effectuées');
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension(); //extension de l'image
+            $fileName = time().'.'.$extension;
+            $file->move('images/', $fileName);
+            $products->image = $fileName;
+        } else {
+            return $request;
+            $products->image = '';
+        }
+
+        $products->save();
+        
+        return redirect('/productAdmin')->with('products', $products);
     }
 
     public function productAdminDelete($id)
     {
-        $products = Product::findOrFail($id);
+        $products = Product::find($id);
         $products->delete();
         return redirect('/productAdmin')->with('status', 'Suppression éffectuée');
+    }
+
+
+    //CRUD Categories
+    public function categoryAdmin()
+    {
+        $categories = Category::all();
+        return view('admin.category', [
+            'categories' => $categories
+        ]);
+    }
+
+    public function categoryAdminAdd(Request $request)
+    {
+        return view('admin.categoryAdd');
+    }
+
+    public function createCategory(Request $request)
+    {
+        $this->validate($request, [
+            'name'        => 'required',
+            'slug'        => 'required',
+        ]);
+
+        $categories = new Category;
+
+        $categories->id          = $request->input('id');
+        $categories->name        = $request->input('name');
+        $categories->slug        = $request->input('slug');
+        
+        $categories->save();
+        return redirect('/categoryAdmin')->with('success', 'Nouvelle categorie ajoutée !');
+    }
+
+    public function categoryAdminEdit($id)
+    {
+        $categories = Category::find($id);
+        return view('admin.categoryEdit')->with('categories', $categories);
+    }
+
+    public function categoryAdminUpdate(Request $request, $id)
+    {
+        $categories               = Category::find($id);
+
+        $categories->name         = $request->input('name');
+        $categories->slug         = $request->input('slug');
+    
+        $categories->save();
+        
+        return redirect('/categoryAdmin')->with('categories', $categories)->with('success', 'Modification(s) effectuée(s)');
+    }
+
+    public function categoryAdminDelete($id)
+    {
+        $categories = Category::find($id);
+        $categories->delete();
+        return redirect('/categoryAdmin')->with('status', 'Catégorie supprimée');
     }
 }

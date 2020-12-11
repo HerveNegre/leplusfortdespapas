@@ -14,53 +14,65 @@
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 					<ul class="nav navbar-nav menu_nav mr-auto ml-5">
 						<li class="nav-item">
+
 							<a class="nav-link"  style="color:#f6bc30" href="{{ route('home') }}">
 								<i class="fas fa-home"></i>
+
 								Accueil
 							</a>
 						</li>
 						<li class="nav-item submenu dropdown">
+
 							<a style="color:#154c7b" href="{{ route('products') }}" class="nav-link">
 								<i class="fas fa-shopping-bag"></i>
+
 								Produits
 							</a>
 						</li>
 						<li class="nav-item submenu dropdown">
 							<a href="{{ route('contact') }}" class="nav-link">
-								<i class="fas fa-envelope"></i>
+								<i class="fas fa-envelope mr-1"></i>
 								Contact
 							</a>
 						</li>
 						@guest
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('login') }}">
-									<i class="fas fa-wifi"></i>
+									<i class="fas fa-wifi mr-1"></i>
 									Se connecter
 								</a>
 							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('register') }}">
-									<i class="fas fa-user-plus"></i>
+									<i class="fas fa-user-plus mr-1"></i>
 									S'inscrire
 								</a>
 							</li>
 						@else
-						<li class="nav-item submenu dropdown">
-							<a href="{{ route('orders') }}" class="nav-link">
-								<i class="fas fa-truck"></i>
-								Commandes
-							</a>
-						</li>
+							<li class="nav-item submenu dropdown">
+								<a href="{{ route('orders') }}" class="nav-link">
+									<i class="fas fa-truck mr-1"></i>
+									Commandes
+								</a>
+							</li>
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('logout') }}">
-									<i class="fas fa-sign-out-alt"></i>
+									<i class="fas fa-sign-out-alt mr-1"></i>
 									Se déconnecter
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="{{ route('myProfile') }}">
+									<i class="fas fa-user mr-1"></i>
+									Mon Compte
 								</a>
 							</li>
 						@endguest
 							<li class="nav-item">
+
 								<a class="nav-link" style="color:#1b838c" href="{{ route('cart') }}">
 									<i class="fas fa-shopping-cart"></i>
+
 									Mon panier
 									@if(Cart::instance('default')->count() > 0)
 										<span class="badge badge-warning">{{ Cart::instance('default')->count() }}</span>
