@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Product;
+use Illuminate\Support\Facades\View;
 use Illuminate\Http\Request;
 use Gloudemans\Shoppingcart\Facades\Cart;
 
@@ -9,7 +10,14 @@ class CartController extends Controller
 {
     public function index()
     {
-        return view('cart');
+        $cart = Cart::content();
+        $productsList = [];
+        foreach ($cart as $value) {
+            $product = Product::where('id', $value->id)->first();
+            array_push($productsList, $product);
+            
+        }
+        return View::make('cart')->with('products', $productsList);
     }
 
     /**
@@ -35,10 +43,12 @@ class CartController extends Controller
         Cart::remove($id);
         return back()->with('success', "L'article a bien été supprimé du panier");
     }
+
     public function reset()
     {
         Cart::destroy();
     }
+
     public function save($id)
     {
         $item = Cart::get($id);

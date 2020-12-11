@@ -61,7 +61,7 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 											<p>{{ $product->details }}</p>
 										</div>
 										<div class="prd-bottom">
-											<a href="" class="social-info">
+											<a href="{{ url('cart') }}" class="social-info">
 												<span class="ti-bag"></span>
 												<p class="hover-text">Ajouter au panier</p>
 											</a>

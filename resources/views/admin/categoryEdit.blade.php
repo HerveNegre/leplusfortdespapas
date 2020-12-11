@@ -112,58 +112,26 @@
             <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>
-                <h4 class="card-title d-flex justify-content-center">Ajouter un produit</h4>
+                <h4 class="card-title d-flex justify-content-center">Modifier la categorie</h4>
               </div>
-              <div class="panel-body">
-                <div class="table-responsive d-flex justify-content-center">
-                    <form class="col-sm-6"  enctype="multipart/form-data" action="{{ route('create') }}" method="post">
-                      {{ csrf_field() }}
-                    
-  
-                      <div class="form-group">
-                        <b>Nom</b>
-                        <input type="text" class="form-control" name="name" id="name" placeholder="Tapez le nom du produit" required>
-                      </div>
-                      <div class="form-group">
-                        <b>Slug</b>
-                        <input type="text" class="form-control" name="slug" id="slug" placeholder="Tapez le slug du produit" required>
-                      </div>
-                      <div class="form-group">
-                       <b>Résumé</b>
-                        <input type="text" class="form-control" name="details" id="details" placeholder="Tapez le resumé du produit" required>
-                      </div>
-                      <div class="form-group">
-                       <b>Prix</b>
-                        <input type="text" class="form-control" name="price" id="price" placeholder="Indiquez le prix" required>
-                      </div>
-                      <div class="form-group mt-5">
-                        <b>Description</b>
-                        <textarea class="form-control mb-2" name="description" id="description" placeholder="Tapez la description complete du produit"></textarea required>
-                      </div>
-                      <div class="form-group mt-3">
-                        <b class="mr-3">Catégorie</b>
-                      </div>
-                        <select name="category_id" id="category_id" required>
-                          <option value="">--Selectionnez la catégorie du produit--</option>
-                          <option value="1">Bain</option>
-                          <option value="2">Nuit</option>
-                          <option value="3">Soins</option>
-                          <option value="4">Divers</option>
-                          <option value="5">Cuisine</option>
-                          <option value="6">Accessoires poussette</option>
-                        </select>
-                      <div class="input-group mt-5 mb-2">
-                        <b>Image du produit</b>
-                      </div>
-                      <div class="mt-2">
-                        <input class="custum-file-input mb-4" type="file" name="image" id="image" required>
-                      </div>
-                      <div class="reset-button d-flex justify-content-center mt-5 mb-5">
-                        <input type="submit" class="btn btn-success mr-3" value="Ajouter">
-                        <a href="/productAdmin" type="submit" class="btn btn-danger">Retour</a>
-                      </div>
-                    </form>
-                </div>
+              <div class="card-body">
+                <form action="/categoryUpdate/{{ $categories->id }}" enctype="multipart/form-data" method="POST">
+                  {{ csrf_field() }}
+                  {{ method_field('PUT') }} <!--fonction qui valide la mis à jour -->
+                  <div class="form-group">
+                    <b>Nom</b>
+                    <input type="text" class="form-control" name="name" id="name" value="{{ $categories->name }}">
+                  </div>
+                  <div class="form-group">
+                    <b>Slug</b>
+                    <input type="text" class="form-control" name="slug" id="slug" value="{{ $categories->slug }}">
+                  </div>
+                  
+                  <div class="d-flex justify-content-center mb-5 mt-5">
+                    <button type="submit" class="btn btn-success mr-3">Modifier</button>
+                    <a href="/categoryAdmin" type="submit" class="btn btn-danger">Retour</a>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
