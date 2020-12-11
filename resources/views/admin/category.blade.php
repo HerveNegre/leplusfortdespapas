@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+@<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -41,7 +41,7 @@
           </li>
           <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
             <a href="/productAdmin">
-              <i class="fas fa-shopping-bag"></i>
+              <i class="now-ui-icons ui-1_bell-53"></i>
               <p>Produits</p>
             </a>
           </li>
@@ -103,47 +103,58 @@
         </div>
       </nav>
       <!-- End Navbar -->
-
-      <div class="panel-header panel-header-lg">
+    <div class="panel-header panel-header-lg">
         <canvas id="bigDashboardChart"></canvas>
       </div>
-      <div class="content d-flex justify-content-center responsive">
-          <div class="col-md-6">
+      <div class="content d-flex justify-content-center">
+          <div class="col-md-responsive">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title d-flex justify-content-center">Liste CRUD</h4>
+                <h5 class="card-category">Tableau de bord</h5>
+                <h4 class="card-title d-flex justify-content-center"> Liste des Categories</h4>
+                @if (session('success'))
+                  <div class="alert alert-success" role="alert">
+                      {{ session('success') }}
+                      <button type="button" class="close" data-dismiss="alert">x</button>
+                  </div>
+                @endif
+                @if (session('status'))
+                  <div class="alert alert-danger" role="alert">
+                      {{ session('status') }}
+                      <button type="button" class="close" data-dismiss="alert">x</button>
+                  </div>
+                @endif
+                <a href="{{ route('categoryAdminAdd') }}">
+                  <button type="submit" class="btn btn-primary">Ajouter une categorie</button>
+                </a>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
                   <table class="table">
                     <thead class="text-primary">
+                      <th>Id</th>
                       <th>Nom</th>
+                      <th>Slug</th>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td>Catégories</td>
-                        <td>
-                          <a href="/categoryAdmin">
-                            <button class="btn btn-success">Consulter</button>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Produits</td>
-                        <td>
-                          <a href="/productAdmin">
-                            <button class="btn btn-success">Consulter</button>
-                          </a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>Utilisateurs</td>
-                        <td>
-                          <a href="/role-register">
-                            <button class="btn btn-success">Consulter</button>
-                          </a>
-                        </td>
-                      </tr>
+                      @foreach ($categories as $category)
+                        <tr>
+                          <td>{{ $category->id }}</td>
+                          <td>{{ $category->name }}</td>
+                          <td>{{ $category->slug }}</td>
+                          <td>
+                            <a class="btn btn-success" href="/categoryEdit/{{ $category->id }}">MODIFIER</a>
+                          </td>
+                          <td>
+                            <form action="/categoryDelete/{{ $category->id }}" method="post">
+                              {{ csrf_field() }}
+                              {{ method_field('DELETE') }} <!--fonction qui permet de supprimer-->
+                              <input type="hidden" name="id" value="{{ $category->id }}">
+                              <button type="submit" class="btn btn-danger">SUPPRIMER</button>
+                            </form>
+                          </td>
+                        </tr>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>
@@ -152,14 +163,7 @@
           </div>
         </div>
       </div>
-      <footer class="footer">
-        <div class=" container-fluid ">
-          <div class="copyright" id="copyright">
-            &copy; <script>
-              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-          </div>
-        </div>
-      </footer>
+      
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -174,11 +178,10 @@
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
   <script src="../assets/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
-      // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
 
     });

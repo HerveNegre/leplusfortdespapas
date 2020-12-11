@@ -374,6 +374,7 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 											<p>{{ $product->details }}</p>
 										</div>
 										<div class="prd-bottom">
+
 											<form action="{{ route('cart.store') }}" method="post">
 												{{ csrf_field() }}
 												<input type="hidden" name="id" value="{{ $product->id }}">
