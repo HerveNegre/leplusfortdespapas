@@ -33,6 +33,12 @@
             <p>Table de matières</p>
           </a>
         </li>
+        <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/ordersAdmin">
+            <i class="fas fa-truck"></i>
+            <p>Commandes</p>
+          </a>
+        </li>
         <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
           <a href="/categoryAdmin">
             <i class="fas fa-book"></i>
@@ -169,9 +175,11 @@
       <footer class="footer">
         <div class=" container-fluid ">
           <div class="copyright" id="copyright">
-            &copy; <script>
+            &copy;
+            <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>
+            Benjamin, Quentin, Brice et Herve by Coding Academy Lyon Octobre 2020
           </div>
         </div>
       </footer>

@@ -33,6 +33,12 @@
             <p>Table de matières</p>
           </a>
         </li>
+        <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/ordersAdmin">
+            <i class="fas fa-truck"></i>
+            <p>Commandes</p>
+          </a>
+        </li>
         <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
           <a href="/categoryAdmin">
             <i class="fas fa-book"></i>

@@ -1,4 +1,4 @@
-@<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -26,69 +26,75 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
     <div class="sidebar-wrapper" id="sidebar-wrapper">
-        <ul class="nav">
-          <li class=" {{ 'dashboard' == request()->path() ? "active" : "" }}">
-            <a href="/dashboard">
-              <i class="now-ui-icons design_app"></i>
-              <p>Table de matières</p>
-            </a>
-          </li>
-          <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
-            <a href="/categoryAdmin">
-              <i class="fas fa-book"></i>
-              <p>Catégories</p>
-            </a>
-          </li>
-          <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
-            <a href="/productAdmin">
-              <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>Produits</p>
-            </a>
-          </li>
-          <li class=" {{ 'role-register' == request()->path() ? "active" : "" }}">
-            <a href="/role-register">
-              <i class="now-ui-icons users_single-02"></i>
-              <p>Utilisateurs</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div> 
-    <div class="main-panel" id="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="#pablo">Tableau de bord</a>
+      <ul class="nav">
+        <li class=" {{ 'dashboard' == request()->path() ? "active" : "" }}">
+          <a href="/dashboard">
+            <i class="now-ui-icons design_app"></i>
+            <p>Table de matières</p>
+          </a>
+        </li>
+        <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/ordersAdmin">
+            <i class="fas fa-truck"></i>
+            <p>Commandes</p>
+          </a>
+        </li>
+        <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/categoryAdmin">
+            <i class="fas fa-book"></i>
+            <p>Catégories</p>
+          </a>
+        </li>
+        <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/productAdmin">
+            <i class="now-ui-icons ui-1_bell-53"></i>
+            <p>Produits</p>
+          </a>
+        </li>
+        <li class=" {{ 'role-register' == request()->path() ? "active" : "" }}">
+          <a href="/role-register">
+            <i class="now-ui-icons users_single-02"></i>
+            <p>Utilisateurs</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> 
+  <div class="main-panel" id="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+      <div class="container-fluid">
+        <div class="navbar-wrapper">
+          <div class="navbar-toggle">
+            <button type="button" class="navbar-toggler">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+            </button>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form class="px-3">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
+          <a class="navbar-brand" href="#pablo">Tableau de bord</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+          <form class="px-3">
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search...">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <i class="now-ui-icons ui-1_zoom-bold"></i>
                 </div>
               </div>
-            </form>
-            <ul class="navbar-nav">
-              <li>
-                <a class="px-3" href="#" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                  {{ Auth::user()->name }} <i class="now-ui-icons users_single-02"></i>
-                </a>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li>
+              <a class="px-3" href="#" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                {{ Auth::user()->name }} <i class="now-ui-icons users_single-02"></i>
+                
                 <a class="px-3" href="{{ route('logout') }}"
                   onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">
@@ -97,73 +103,63 @@
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                   {{ csrf_field() }}
                 </form>
-              </li>
-            </ul>
-          </div>
+              </a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
       <!-- End Navbar -->
-    <div class="panel-header panel-header-lg">
+      <div class="panel-header panel-header-lg">
         <canvas id="bigDashboardChart"></canvas>
       </div>
-      <div class="content d-flex justify-content-center">
+      <div class="content">
           <div class="col-md-responsive">
             <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>
-                <h4 class="card-title d-flex justify-content-center"> Liste des Categories</h4>
-                @if (session('success'))
-                  <div class="alert alert-success" role="alert">
-                      {{ session('success') }}
-                      <button type="button" class="close" data-dismiss="alert">x</button>
-                  </div>
-                @endif
-                @if (session('status'))
-                  <div class="alert alert-danger" role="alert">
-                      {{ session('status') }}
-                      <button type="button" class="close" data-dismiss="alert">x</button>
-                  </div>
-                @endif
-                <a href="{{ route('categoryAdminAdd') }}">
-                  <button type="submit" class="btn btn-primary">Ajouter une categorie</button>
-                </a>
+                <h4 class="card-title d-flex justify-content-center">Ajouter une catégorie de produit</h4>
               </div>
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table">
-                    <thead class="text-primary">
-                      <th>Id</th>
-                      <th>Nom</th>
-                      <th>Slug</th>
-                    </thead>
-                    <tbody>
-                      @foreach ($categories as $category)
-                        <tr>
-                          <td>{{ $category->id }}</td>
-                          <td>{{ $category->name }}</td>
-                          <td>{{ $category->slug }}</td>
-                          <td>
-                            <a class="btn btn-success" href="/categoryEdit/{{ $category->id }}">MODIFIER</a>
-                          </td>
-                          <td>
-                            <form action="/categoryDelete/{{ $category->id }}" method="post">
-                              {{ csrf_field() }}
-                              {{ method_field('DELETE') }} <!--fonction qui permet de supprimer-->
-                              <input type="hidden" name="id" value="{{ $category->id }}">
-                              <button type="submit" class="btn btn-danger">SUPPRIMER</button>
-                            </form>
-                          </td>
-                        </tr>
-                      @endforeach
-                    </tbody>
-                  </table>
+              <div class="panel-body">
+                <div class="table-responsive d-flex justify-content-center">
+                    <form class="col-sm-6"  enctype="multipart/form-data" action="{{ route('createCategory') }}" method="post">
+                      {{ csrf_field() }}
+                    
+                      <div class="form-group">
+                        <b>Id</b>
+                        <input type="number" class="form-control" name="id" id="id" placeholder="indiquez l'Id de la catégorie" required>
+                      </div>
+                      <div class="form-group">
+                        <b>Nom</b>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="indiquez le nom de la catégorie" required>
+                      </div>
+                      <div class="form-group">
+                        <b>Slug</b>
+                        <input type="text" class="form-control" name="slug" id="slug" placeholder="Tapez le slug de la catégorie" required>
+                      </div>
+                      
+                      <div class="reset-button d-flex justify-content-center mt-5 mb-5">
+                        <input type="submit" class="btn btn-success mr-3" value="Ajouter">
+                        <a href="/productAdmin" type="submit" class="btn btn-danger">Retour</a>
+                      </div>
+                    </form>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      
+      <footer class="footer">
+        <div class=" container-fluid ">
+          <div class="copyright" id="copyright">
+            &copy;
+            <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>
+            Benjamin, Quentin, Brice et Herve by Coding Academy Lyon Octobre 2020
+          </div>
+        </div>
+      </footer>
     </div>
   </div>
   <!--   Core JS Files   -->
@@ -178,10 +174,11 @@
   <!--  Notifications Plugin    -->
   <script src="../assets/js/plugins/bootstrap-notify.js"></script>
   <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+  <script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script><!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
   <script src="../assets/demo/demo.js"></script>
   <script>
     $(document).ready(function() {
+      // Javascript method's body can be found in assets/js/demos.js
       demo.initDashboardPageCharts();
 
     });

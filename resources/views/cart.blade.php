@@ -1,12 +1,6 @@
 @extends('layouts.master')
 
 @section('content')
-<div class="container">
-    <br/>
-    <br/>
-    <br/>
-    <br/>
-    </div>
 <section class="cart_area">
     <div class="container">
         @if($message = Session::get('success'))
@@ -33,10 +27,6 @@
                                 <tr>
                                     <td>
                                         <div class="media">
-
-                                            {{-- <div class="d-flex">
-                                                <img class="img-fluid" src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}">
-                                            </div> --}}
                                             <div class="media-body">
                                                 <h4>{{ $product->name }}</h4>
                                                 <p>{{ $product->details }}</p>
@@ -46,8 +36,7 @@
                                     <td>
                                         <h5>{{ $product->price }} €</h5>
                                     </td>
-                                    
-                                    <td> 
+                                    <td>
                                         <div class="product_count">
                                             <input disabled type="text" name="qty" id="sst" maxlength="12" value="x {{ $product->qty }}" title="Quantity:"
                                                 class="input-text qty">
@@ -67,25 +56,37 @@
                                 </tr>
                             @endforeach
                             <tr>
-                                
-                               
-                                
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
                                 <td>
                                     <h5>Hors taxe</h5>
-                                    <p class="blog_papa">Taxe</p>
+                                    <p>Taxe</p>
                                     <h4>Total du panier</h4>
                                 </td>
                                 <td>
                                     <h5>{{ Cart::subtotal() }} €</h5>
-                                    <p class="blog_papa">{{ Cart::tax() }} €</p>
+                                    <p>{{ Cart::tax() }} €</p>
                                     <h4>{{ Cart::total() }} €</h4>
                                 </td>
                             </tr>
                         
                             <tr class="out_button_area">
-                                
-                                
-                                
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td>
+
+                                </td>
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="{{ route('products') }}">Retour aux Articles</a>

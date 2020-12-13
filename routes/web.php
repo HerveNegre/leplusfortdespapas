@@ -11,7 +11,7 @@
 |
 */
 //Accueil
-Route::get('/', 'HomeController@home')->name('home');
+// Route::get('/', 'HomeController@home')->name('home');
 
 //Contact
 Route::get('/contact', 'HomeController@contact')->name('contact');
@@ -55,11 +55,12 @@ Route::get('/logout', function () {
 
 // //User Auth
 
-Route::group(['middleware' => ['auth', 'isUser']], function () {
+// Route::group(['middleware' => ['auth', 'isUser']], function () {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/myProfile', 'HomeController@myProfile')->name('myProfile');
     Route::post('/myProfileUpdate', 'HomeController@myProfileUpdate')->name('myProfileUpdate');
-});
+    Route::resource('/comments', 'CommentController');
+    // });
 
 
 //Admin Auth
@@ -90,5 +91,10 @@ Route::get('/categoryEdit/{id}', 'Admin\DashboardController@categoryAdminEdit');
 Route::put('/categoryUpdate/{id}', 'Admin\DashboardController@categoryAdminUpdate');
 Route::delete('/categoryDelete/{id}', 'Admin\DashboardController@categoryAdminDelete');
 
+//CRUD Commandes
+Route::get('/ordersAdmin', 'Admin\DashboardController@ordersAdmin')->name('index');
+Route::get('/ordersEdit/{id}', 'Admin\DashboardController@ordersAdminEdit');
+Route::put('/ordersUpdate/{id}', 'Admin\DashboardController@ordersAdminUpdate');
+Route::delete('/ordersDelete/{id}', 'Admin\DashboardController@ordersAdminDelete');
 
 });

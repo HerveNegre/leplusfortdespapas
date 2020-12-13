@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Category;
+use App\User;
 use Illuminate\Http\Request;
+use App\Comment;
 
 class ProductsController extends Controller
 {
@@ -33,8 +35,12 @@ class ProductsController extends Controller
     public function show($slug)
     {
         $product = Product::where('slug', $slug)->firstOrFail();
+        $user = User::all();
+        $message = Comment::all();
         return view('singleProduct', [
-            'product'  => $product
+        'product' => $product,
+        'user' => $user,
+        'message' => $message
         ]);
     }
     public function search()

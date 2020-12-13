@@ -16,7 +16,7 @@ class CreateOrderProductsTable extends Migration
         Schema::create('order_products', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('set null');
-            $table->string('product_name')->references('name')->on('products')->onUpdate('cascade')->onDelete('set null');
+            $table->integer('product_id')->references('id')->on('products')->onUpdate('cascade')->onDelete('set null');
             $table->integer('quantity')->unsigned();
             $table->timestamps();
         });

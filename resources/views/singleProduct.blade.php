@@ -8,9 +8,7 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 
 -->
 	<!--================Single Product Area =================-->
-	
-	
-	<section class="lattest-product-arrea pb-40 category-list">
+    <section class="lattest-product-arrea pb-40 category-list">
             <div class="product_image_area">
                 <div class="container">
                     <div class="row s_product_inner">
@@ -34,7 +32,7 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
                                 <ul class="list">
                                 	<li><a class="active" href="#"><span>Categorie</span> : {{ $product->category->name }}</a></li>
                                 </ul>
-                                <p class="blog_papa">{{ $product->details }}</p>
+                                <p>{{ $product->details }}</p>
                                 <div class="card_area d-flex align-items-center">
                                     <form action="{{ route('cart.store') }}" method="post">
 										{{ csrf_field() }}
@@ -60,49 +58,13 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 					<a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-					 aria-selected="false">Specification</a>
-				</li>
-				<li class="nav-item">
 					<a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact"
-					 aria-selected="false">Commentaires</a>
+					 aria-selected="false">Avis</a>
 				</li>
 			</ul>
 			<div class="tab-content" id="myTabContent">
 				<div class="tab-pane fade" id="home" role="tabpanel" aria-labelledby="home-tab">
 					<p>{{ $product->description }}</p>
-				</div>
-				<div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-					<div class="table-responsive">
-						<table class="table">
-							<tbody>
-								<tr>
-									<td>
-										<h5>Largeur</h5>
-									</td>
-									<td>
-										<h5>128mm</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Hauteur</h5>
-									</td>
-									<td>
-										<h5>508mm</h5>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<h5>Poids</h5>
-									</td>
-									<td>
-										<h5>52gm</h5>
-									</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
 				</div>
 				
 				{{-- Commentaires du produit --}}
@@ -113,42 +75,53 @@ ESPACE POUR UN CARROUSEL / IMAGE DE FOND
 								<div class="review_item">
 									<div class="media">
 										<div class="media-body">
-											<h4>Blake Ruiz</h4>
-											<h5>12th Feb, 2018 at 05:56 pm</h5>
-											<a class="reply_btn" href="#">Répondre</a>
+											@foreach ($user as $value)
+												<h4 class="mr-auto">{{ $value->name }}</h4>
+											@endforeach
+											@foreach ($message as $value)
+												<h5>{{ $value->created_at }}</h5>
+											<a class="reply_btn" href="#">Repondre</a>
 										</div>
 									</div>
-									<p>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-										dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-										commodo
-									</p>
+									<p>{{ $value->message }}</p>
+									<hr>
 								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="review_box">
-								<h4>Laissez un commentaire !</h4>
-								<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="text" class="form-control" id="name" name="name" placeholder="Votre Prénom">
+								@endforeach
+								@if (auth()->check())
+									<div class="col-lg-6">
+										<div class="review_box">
+											<h4 class="col-md-12 d-flex justify-content-center">Donnez votre avis !</h4>
+											<form class="row contact_form" action="/comments" method="post" id="comment" role="form" novalidate="novalidate">
+												{{ csrf_field() }}
+												<div class="col-md-12">
+													<div class="form-group mb-5">
+														<h6>Notez le produit /5 !</h6>
+														<select type="text" class="form-control" name="rating" id="rating">
+															<option value="1">1</option>
+															<option value="2">2</option>
+															<option value="3">3</option>
+															<option value="4">4</option>
+															<option value="5">5</option>
+														</select>
+													</div>
+													<div class="form-group mb-5">
+														<textarea class="form-control" name="message" id="message" rows="1" placeholder="Votre message"></textarea>
+													</div>
+												</div>
+												{{-- <div class="form-group">
+													<input type="hidden" name="product_id" value="{{ $product->id }}">
+												</div> --}}
+												<div class="col-md-12 text-right">
+													<button type="submit" value="submit" class="btn primary-btn">Valider</button>
+												</div>
+											</form>
 										</div>
 									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<input type="email" class="form-control" id="email" name="email" placeholder="Votre adresse email">
-										</div>
-									</div>
-									<div class="col-md-12">
-										<div class="form-group">
-											<textarea class="form-control" name="message" id="message" rows="1" placeholder="Message"></textarea>
-										</div>
-									</div>
-									<div class="col-md-12 text-right">
-										<button type="submit" value="submit" class="btn primary-btn">Valider</button>
-									</div>
-								</form>
+								@else
+								<a href="/login" class="button primary-btn">
+									<p class="d-flex justify-content-center">Connectez vous pour donner votre avis</p>
+								</a>
+								@endif
 							</div>
 						</div>
 					</div>

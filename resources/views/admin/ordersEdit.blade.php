@@ -34,11 +34,11 @@
           </a>
         </li>
         <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
-          <a href="/ordersAdmin">
-            <i class="fas fa-truck"></i>
-            <p>Commandes</p>
-          </a>
-        </li>
+            <a href="/ordersAdmin">
+              <i class="fas fa-truck"></i>
+              <p>Commandes</p>
+            </a>
+          </li>
         <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
           <a href="/categoryAdmin">
             <i class="fas fa-book"></i>
@@ -118,24 +118,24 @@
             <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>
-                <h4 class="card-title d-flex justify-content-center">Modifier la categorie</h4>
+                <h4 class="card-title d-flex justify-content-center">Modifier la commande</h4>
               </div>
               <div class="card-body">
-                <form action="/categoryUpdate/{{ $categories->id }}" enctype="multipart/form-data" method="POST">
+                <form action="/ordersUpdate/{{ $orders->id }}" enctype="multipart/form-data" method="POST">
                   {{ csrf_field() }}
                   {{ method_field('PUT') }} <!--fonction qui valide la mis à jour -->
                   <div class="form-group">
-                    <b>Nom</b>
-                    <input type="text" class="form-control" name="name" id="name" value="{{ $categories->name }}">
+                    <b>N° de commande</b>
+                    <input type="number" class="form-control" name="id" id="id" value="{{ $orders->id }}">
                   </div>
                   <div class="form-group">
-                    <b>Slug</b>
-                    <input type="text" class="form-control" name="slug" id="slug" value="{{ $categories->slug }}">
+                    <b>Référence client</b>
+                    <input type="number" class="form-control" name="user_id" id="user_id" value="{{ $orders->user_id }}">
                   </div>
                   
                   <div class="d-flex justify-content-center mb-5 mt-5">
                     <button type="submit" class="btn btn-success mr-3">Modifier</button>
-                    <a href="/categoryAdmin" type="submit" class="btn btn-danger">Retour</a>
+                    <a href="/ordersAdmin" type="submit" class="btn btn-danger">Retour</a>
                   </div>
                 </form>
               </div>
