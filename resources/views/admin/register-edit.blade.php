@@ -25,7 +25,7 @@
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
-    <div class="sidebar-wrapper" id="sidebar-wrapper">
+ <div class="sidebar-wrapper" id="sidebar-wrapper">
         <ul class="nav">
           <li class=" {{ 'dashboard' == request()->path() ? "active" : "" }}">
             <a href="/dashboard">
@@ -33,7 +33,18 @@
               <p>Table de matières</p>
             </a>
           </li>
-        
+          <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+            <a href="/ordersAdmin">
+              <i class="fas fa-truck"></i>
+              <p>Commandes</p>
+            </a>
+          </li>
+          <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
+            <a href="/categoryAdmin">
+              <i class="fas fa-book"></i>
+              <p>Catégories</p>
+            </a>
+          </li>
           <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
             <a href="/productAdmin">
               <i class="now-ui-icons ui-1_bell-53"></i>
@@ -45,10 +56,6 @@
               <i class="now-ui-icons users_single-02"></i>
               <p>Utilisateurs</p>
             </a>
-          </li>
-          <li class=" {{ 'role-register' == request()->path() ? "active" : "" }}">
-            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-            <p>Administrateur</p>
           </li>
         </ul>
       </div>
@@ -73,7 +80,7 @@
             <span class="navbar-toggler-bar navbar-kebab"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
+            <form class="px-3">
               <div class="input-group no-border">
                 <input type="text" value="" class="form-control" placeholder="Search...">
                 <div class="input-group-append">
@@ -84,39 +91,18 @@
               </div>
             </form>
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons media-2_sound-wave"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                  </p>
-                </a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                            Se déconnecter
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
-                </ul>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons users_single-02"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                  </p>
+              <li>
+                <a class="px-3" href="#" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                  {{ Auth::user()->name }} <i class="now-ui-icons users_single-02"></i>
+                  
+                  <a class="px-3" href="{{ route('logout') }}"
+                    onclick="event.preventDefault();
+                      document.getElementById('logout-form').submit();">
+                    Se déconnecter
+                  </a>
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    {{ csrf_field() }}
+                  </form>
                 </a>
               </li>
             </ul>
@@ -132,7 +118,7 @@
             <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>
-                <h4 class="card-title"> Modifier un Utilisateur</h4>
+                <h4 class="card-title d-flex justify-content-center"> Modifier un Utilisateur</h4>
               </div>
               <div class="card-body">
                     <form action="/role-register-update/{{ $users->id }}" method="POST">
@@ -141,7 +127,7 @@
 
                         <div class="form-group">
                             <label>Nom</label>
-                            <input type="text" class="form-control" name="name" id="name" value="{{ old('$users->name') }}">
+                            <input type="text" class="form-control" name="name" id="name" value="{{ $users->name }}">
                         </div>
                         <div class="form-group">
                             <label>Grade</label>
@@ -159,7 +145,6 @@
                       </div>
                         <button type="submit" class="btn btn-success">Modifier</button>
                         <a href="/role-register" type="submit" class="btn btn-danger">Retour</a>
-                    
                     </form>
                 </div>
               </div>
@@ -170,9 +155,11 @@
       <footer class="footer">
         <div class=" container-fluid ">
           <div class="copyright" id="copyright">
-            &copy; <script>
+            &copy;
+            <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>
+            Benjamin, Quentin, Brice et Herve by Coding Academy Lyon Octobre 2020
           </div>
         </div>
       </footer>

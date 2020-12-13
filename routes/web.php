@@ -11,14 +11,17 @@
 |
 */
 //Accueil
-Route::get('/', 'HomeController@home')->name('home');
+// Route::get('/', 'HomeController@home')->name('home');
 
 //Contact
 Route::get('/contact', 'HomeController@contact')->name('contact');
+Route::post('/contact', 'HomeController@contactStore')->name('contactStore');
 
 //Produits
 Route::get('/products', 'ProductsController@index')->name('products');
+Route::get('/search', 'ProductsController@search')->name('products.search');
 Route::get('/products/{product}', 'ProductsController@show')->name('singleProduct');
+
 
 //Panier
 Route::get('/cart', 'CartController@index')->name('cart');
@@ -51,9 +54,14 @@ Route::get('/logout', function () {
 })->name('logout');
 
 // //User Auth
-Route::group(['middleware' => ['auth', 'isUser']], function () {
+
+// Route::group(['middleware' => ['auth', 'isUser']], function () {
     Route::get('/', 'HomeController@home')->name('home');
-});
+    Route::get('/myProfile', 'HomeController@myProfile')->name('myProfile');
+    Route::post('/myProfileUpdate', 'HomeController@myProfileUpdate')->name('myProfileUpdate');
+    Route::resource('/comments', 'CommentController');
+    // });
+
 
 //Admin Auth
 Route::group(['middleware' => ['auth', 'admin']], function () {
@@ -68,10 +76,25 @@ Route::put('/role-register-update/{id}', 'Admin\DashboardController@registerUpda
 Route::delete('/role-delete/{id}', 'Admin\DashboardController@registerDelete');
 
 //CRUD Produits
-Route::get('/productAdmin', 'Admin\DashboardController@productAdmin');
-Route::get('/productAdmin-add', 'Admin\DashboardController@productAdminAdd');
-Route::get('/productAdmin-edit/{id}', 'Admin\DashboardController@productAdminEdit');
-Route::put('/productAdmin-update/{id}', 'Admin\DashboardController@productAdminUpdate');
-Route::delete('/productAdmin-delete/{id}', 'Admin\DashboardController@productAdminDelete');
+Route::get('/productAdmin', 'Admin\DashboardController@productAdmin')->name('index');
+Route::get('/productAdd', 'Admin\DashboardController@productAdminAdd')->name('add');
+Route::post('/productCreate', 'Admin\DashboardController@create')->name('create');
+Route::get('/productEdit/{id}', 'Admin\DashboardController@productAdminEdit');
+Route::put('/productUpdate/{id}', 'Admin\DashboardController@productAdminUpdate');
+Route::delete('/productDelete/{id}', 'Admin\DashboardController@productAdminDelete');
+
+//CRUD Categories
+Route::get('/categoryAdmin', 'Admin\DashboardController@categoryAdmin')->name('categoryAdmin');
+Route::get('/categoryAdd', 'Admin\DashboardController@categoryAdminAdd')->name('categoryAdminAdd');
+Route::post('/categoryCreate', 'Admin\DashboardController@createCategory')->name('createCategory');
+Route::get('/categoryEdit/{id}', 'Admin\DashboardController@categoryAdminEdit');
+Route::put('/categoryUpdate/{id}', 'Admin\DashboardController@categoryAdminUpdate');
+Route::delete('/categoryDelete/{id}', 'Admin\DashboardController@categoryAdminDelete');
+
+//CRUD Commandes
+Route::get('/ordersAdmin', 'Admin\DashboardController@ordersAdmin')->name('index');
+Route::get('/ordersEdit/{id}', 'Admin\DashboardController@ordersAdminEdit');
+Route::put('/ordersUpdate/{id}', 'Admin\DashboardController@ordersAdminUpdate');
+Route::delete('/ordersDelete/{id}', 'Admin\DashboardController@ordersAdminDelete');
 
 });

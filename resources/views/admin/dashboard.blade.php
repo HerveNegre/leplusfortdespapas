@@ -33,10 +33,21 @@
               <p>Table de matières</p>
             </a>
           </li>
-          
+          <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+            <a href="/ordersAdmin">
+              <i class="fas fa-truck"></i>
+              <p>Commandes</p>
+            </a>
+          </li>
+          <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
+            <a href="/categoryAdmin">
+              <i class="fas fa-book"></i>
+              <p>Catégories</p>
+            </a>
+          </li>
           <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
             <a href="/productAdmin">
-              <i class="now-ui-icons ui-1_bell-53"></i>
+              <i class="fas fa-shopping-bag"></i>
               <p>Produits</p>
             </a>
           </li>
@@ -83,16 +94,15 @@
               <li>
                 <a class="px-3" href="#" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
                   {{ Auth::user()->name }} <i class="now-ui-icons users_single-02"></i>
-                  
-                  <a class="px-3" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">
-                    Se déconnecter
-                  </a>
-                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    {{ csrf_field() }}
-                  </form>
                 </a>
+                <a class="px-3" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                  Se déconnecter
+                </a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+                </form>
               </li>
             </ul>
           </div>
@@ -107,7 +117,7 @@
           <div class="col-md-6">
             <div class="card">
               <div class="card-header">
-                <h4 class="card-title"> Liste CRUD</h4>
+                <h4 class="card-title d-flex justify-content-center">Liste CRUD</h4>
               </div>
               <div class="card-body">
                 <div class="table-responsive">
@@ -116,6 +126,22 @@
                       <th>Nom</th>
                     </thead>
                     <tbody>
+                      <tr>
+                        <td>Commandes</td>
+                        <td>
+                          <a href="/ordersAdmin">
+                            <button class="btn btn-success">Consulter</button>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Catégories</td>
+                        <td>
+                          <a href="/categoryAdmin">
+                            <button class="btn btn-success">Consulter</button>
+                          </a>
+                        </td>
+                      </tr>
                       <tr>
                         <td>Produits</td>
                         <td>
@@ -145,6 +171,8 @@
           <div class="copyright" id="copyright">
             &copy; <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>
+            Benjamin, Quentin, Brice et Herve by Coding Academy Lyon Octobre 2020
           </div>
         </div>
       </footer>

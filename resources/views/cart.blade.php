@@ -27,9 +27,6 @@
                                 <tr>
                                     <td>
                                         <div class="media">
-                                            <div class="d-flex">
-                                                <img class="img-fluid" src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}">
-                                            </div>
                                             <div class="media-body">
                                                 <h4>{{ $product->name }}</h4>
                                                 <p>{{ $product->details }}</p>
@@ -116,7 +113,7 @@
                     @foreach (Cart::instance('save')->content() as $product)
                         <div class="col-lg-3 col-md-6">
                             <div class="single-product">
-                                <img class="img-fluid" src="{{ asset('images/'.$product->image) }}" alt="{{ $product->name }}">
+                                <img class="img-fluid" src="{{ asset('/images/'.$product->image) }}" alt="{{ $product->name }}">
                                 <div class="product-details">
                                     <h6>{{ $product->name }}</h6>
                                     <div class="product-price">

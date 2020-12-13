@@ -55,22 +55,22 @@
 /* Start Gradient Area css
 ============================================================================================ */
 .gradient-bg, .primary-btn, .add-bag .add-btn, .single-product .product-details .prd-bottom .social-info span:after, .grid-btn:hover, .list-btn:hover, .grid-btn.active, .list-btn.active, .pagination a.active, .pagination a:hover, .s_Product_carousel .owl-dots div.active, .s_product_text .card_area .icon_btn:after, .product_description_area .nav.nav-tabs li a.active, .blog-pagination .page-item.active .page-link, .single-footer-widget .click-btn {
-  background: -webkit-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: -moz-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: -o-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%); }
+  background: -webkit-linear-gradient(90deg, #1b838c 0%, #1b838c100%);
+  background: -moz-linear-gradient(90deg, #1b838c 0%, #1b838c 100%);
+  background: -o-linear-gradient(90deg, #1b838c 0%, #1b838c 100%);
+  background: linear-gradient(90deg, #1b838c 0%, #1b838c 100%); }
 
 .gradient-bg-reverse, #search_input_box {
-  background: -webkit-linear-gradient(270deg, #ffba00 0%, #ff6c00 100%);
-  background: -moz-linear-gradient(270deg, #ffba00 0%, #ff6c00 100%);
-  background: -o-linear-gradient(270deg, #ffba00 0%, #ff6c00 100%);
-  background: linear-gradient(270deg, #ffba00 0%, #ff6c00 100%); }
+  background: -webkit-linear-gradient(270deg, #1b838c 0%, #1b838c 100%);
+  background: -moz-linear-gradient(270deg, #1b838c 0%, #1b838c 100%);
+  background: -o-linear-gradient(270deg, #1b838c 0%, #1b838c 100%);
+  background: linear-gradient(270deg, #1b838c 0%, #1b838c 100%); }
 
 .gradient-color, .s_product_text h2, .s_product_text .list li a.active, .product_description_area .tab-content .total_rate .box_total h4, .single-footer-widget .bb-btn {
-  background: -webkit-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: -moz-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: -o-linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
-  background: linear-gradient(90deg, #ffba00 0%, #ff6c00 100%);
+  background: -webkit-linear-gradient(90deg, #1b838c 0%, #1b838c 100%);
+  background: -moz-linear-gradient(90deg, #1b838c 0%, #1b838c 100%);
+  background: -o-linear-gradient(90deg, #1b838c 0%, #1b838c 100%);
+  background: linear-gradient(90deg, #1b838c 0%, #1b838c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
@@ -993,7 +993,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .sticky-wrapper {
   position: absolute;
-  top: 40px;
+  top: 20px;
   width: 100%; }
   @media (max-width: 991px) {
     .sticky-wrapper {
@@ -1045,7 +1045,7 @@ h1, h2, h3, h4, h5, h6 {
         display: inline-block;
         font-size: 12px;
         font-weight: 500;
-        color: #222222; }
+        color: #1c204d; }
         @media (min-width: 991px) {
           .header_area .navbar .nav .nav-item .nav-link {
             padding: 10px 0; } }
@@ -1505,8 +1505,8 @@ h1, h2, h3, h4, h5, h6 {
 .single-product {
   margin-bottom: 50px; }
   .single-product img {
-    margin-bottom: 20px;
-    width: 100%; }
+    margin-bottom: 10px;
+     }
   .single-product .product-details h6 {
     font-size: 16px;
     text-transform: uppercase; }
@@ -3301,7 +3301,7 @@ label {
   background: #fff;
   box-shadow: 0 10px 10px rgba(153, 153, 153, 0.1); }
 .sidebar-categories .main-nav-list a {
-  font-size: 14px;
+  font-size: 12px;
   display: block;
   line-height: 50px;
   padding-left: 10px;
@@ -4355,7 +4355,7 @@ label {
     padding: 0px 15px;
     margin-bottom: 20px; }
 .cart_inner .table tbody tr.out_button_area .checkout_btn_inner {
-  margin-left: -388px; }
+  margin-left: 300px; }
   .cart_inner .table tbody tr.out_button_area .checkout_btn_inner .primary-btn {
     height: 40px;
     padding: 0px 30px;
@@ -5663,9 +5663,9 @@ label {
 ============================================================================================ */
 .footer-area {
   padding-top: 100px;
-  background-color: #222222; }
+  background-color: #1c204d; }
   .footer-area h6 {
-    color: #fff;
+    color: #f6bc30;
     margin-bottom: 25px;
     font-size: 18px;
     font-weight: 600; }
@@ -5692,9 +5692,9 @@ label {
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
   .footer-social a:hover i {
-    color: #ffba00; }
+    color: #e8e6d4; }
 .footer-social i {
-  color: #cccccc;
+  color: #e8e6d4;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
   -o-transition: all 0.3s ease 0s;
@@ -5711,7 +5711,7 @@ label {
   width: 80% !important;
   font-weight: 300;
   background: #fff;
-  color: #777;
+  color: white;
   padding-left: 20px;
   border-radius: 0;
   font-size: 14px; }
@@ -5719,15 +5719,15 @@ label {
     outline: none;
     box-shadow: none; }
   .single-footer-widget input.placeholder {
-    color: #ccc; }
+    color: white; }
   .single-footer-widget input:-moz-placeholder {
-    color: #ccc; }
+    color: white; }
   .single-footer-widget input::-moz-placeholder {
-    color: #ccc; }
+    color: white; }
   .single-footer-widget input::-webkit-input-placeholder {
-    color: #ccc; }
+    color: white; }
 .single-footer-widget .bb-btn {
-  color: #fff;
+  color: white;
   font-weight: 300;
   border-radius: 0;
   z-index: 9999;
@@ -5735,14 +5735,14 @@ label {
 .single-footer-widget .info {
   position: absolute;
   margin-top: 5%;
-  color: #fff;
+  color: white;
   font-size: 12px; }
   .single-footer-widget .info.valid {
     color: green; }
   .single-footer-widget .info.error {
     color: red; }
 .single-footer-widget .click-btn {
-  color: #fff;
+  color: white;
   border-radius: 0;
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
@@ -5753,32 +5753,32 @@ label {
     box-shadow: none; }
 .single-footer-widget ::-moz-selection {
   /* Code for Firefox */
-  background-color: #191919 !important;
-  color: #777777; }
+  background-color: #1c204d !important;
+  color: white; }
 .single-footer-widget ::selection {
-  background-color: #191919 !important;
-  color: #777777; }
+  background-color: #1c204d !important;
+  color: white; }
 .single-footer-widget ::-webkit-input-placeholder {
   /* WebKit, Blink, Edge */
-  color: #777777;
+  color: white;
   font-weight: 300; }
 .single-footer-widget :-moz-placeholder {
   /* Mozilla Firefox 4 to 18 */
-  color: #777777;
+  color: white;
   opacity: 1;
   font-weight: 300; }
 .single-footer-widget ::-moz-placeholder {
   /* Mozilla Firefox 19+ */
-  color: #777777;
+  color: white;
   opacity: 1;
   font-weight: 300; }
 .single-footer-widget :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-  color: #777777;
+  color: white;
   font-weight: 300; }
 .single-footer-widget ::-ms-input-placeholder {
   /* Microsoft Edge */
-  color: #777777;
+  color: white;
   font-weight: 300; }
 
 .footer-text {
@@ -5788,6 +5788,16 @@ label {
       padding-top: 40px; } }
   .footer-text a,
   .footer-text i {
-    color: #ffba00; }
+    color: white; }
+
+    .logo_papa {
+      position: relative;
+      
+      right:550px;
+    
+    }
+    .p_papa_blog {
+      color: black;
+    }
 
 /*# sourceMappingURL=main.css.map */

@@ -24,7 +24,7 @@ class UserMiddleware
             if ($banned == 1) {
                 $message = "Vous avez été banni, contactez l'administrateur pour plus d'informations";
             }
-            return redirect()->route('login')
+            return redirect()->route('home')
                 ->with('status', $message)
                 ->withErrors([ 'email' => "Vous avez été banni, contactez l'administrateur pour plus d'informations"])
             ;

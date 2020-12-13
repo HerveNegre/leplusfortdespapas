@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- CSS Files -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet" />
   <link href="../assets/demo/demo.css" rel="stylesheet" />
 </head>
 
@@ -25,150 +26,147 @@
         Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
     -->
     <div class="sidebar-wrapper" id="sidebar-wrapper">
-        <ul class="nav">
-          <li class=" {{ 'dashboard' == request()->path() ? "active" : "" }}">
-            <a href="/dashboard">
-              <i class="now-ui-icons design_app"></i>
-              <p>Table de matières</p>
-            </a>
-          </li>
-          
-          <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
-            <a href="/productAdmin">
-              <i class="now-ui-icons ui-1_bell-53"></i>
-              <p>Produits</p>
-            </a>
-          </li>
-          <li class=" {{ 'role-register' == request()->path() ? "active" : "" }}">
-            <a href="/role-register">
-              <i class="now-ui-icons users_single-02"></i>
-              <p>Utilisateurs</p>
-            </a>
-          </li>
-          <li class=" {{ 'role-register' == request()->path() ? "active" : "" }}">
-            <i class="now-ui-icons arrows-1_cloud-download-93"></i>
-            <p>Administrateur</p>
-          </li>
-        </ul>
-      </div>
-    </div> 
-    <div class="main-panel" id="main-panel">
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
-        <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <div class="navbar-toggle">
-              <button type="button" class="navbar-toggler">
-                <span class="navbar-toggler-bar bar1"></span>
-                <span class="navbar-toggler-bar bar2"></span>
-                <span class="navbar-toggler-bar bar3"></span>
-              </button>
-            </div>
-            <a class="navbar-brand" href="#pablo">Tableau de bord</a>
+      <ul class="nav">
+        <li class=" {{ 'dashboard' == request()->path() ? "active" : "" }}">
+          <a href="/dashboard">
+            <i class="now-ui-icons design_app"></i>
+            <p>Table de matières</p>
+          </a>
+        </li>
+        <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/ordersAdmin">
+            <i class="fas fa-truck"></i>
+            <p>Commandes</p>
+          </a>
+        </li>
+        <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/categoryAdmin">
+            <i class="fas fa-book"></i>
+            <p>Catégories</p>
+          </a>
+        </li>
+        <li class=" {{ 'productAdmin' == request()->path() ? "active" : "" }}">
+          <a href="/productAdmin">
+            <i class="now-ui-icons ui-1_bell-53"></i>
+            <p>Produits</p>
+          </a>
+        </li>
+        <li class=" {{ 'role-register' == request()->path() ? "active" : "" }}">
+          <a href="/role-register">
+            <i class="now-ui-icons users_single-02"></i>
+            <p>Utilisateurs</p>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div> 
+  <div class="main-panel" id="main-panel">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
+      <div class="container-fluid">
+        <div class="navbar-wrapper">
+          <div class="navbar-toggle">
+            <button type="button" class="navbar-toggler">
+              <span class="navbar-toggler-bar bar1"></span>
+              <span class="navbar-toggler-bar bar2"></span>
+              <span class="navbar-toggler-bar bar3"></span>
+            </button>
           </div>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-            <span class="navbar-toggler-bar navbar-kebab"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-end" id="navigation">
-            <form>
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <div class="input-group-append">
-                  <div class="input-group-text">
-                    <i class="now-ui-icons ui-1_zoom-bold"></i>
-                  </div>
+          <a class="navbar-brand" href="#pablo">Tableau de bord</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+          <span class="navbar-toggler-bar navbar-kebab"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-end" id="navigation">
+          <form class="px-3">
+            <div class="input-group no-border">
+              <input type="text" value="" class="form-control" placeholder="Search...">
+              <div class="input-group-append">
+                <div class="input-group-text">
+                  <i class="now-ui-icons ui-1_zoom-bold"></i>
                 </div>
               </div>
-            </form>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons media-2_sound-wave"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Stats</span>
-                  </p>
+            </div>
+          </form>
+          <ul class="navbar-nav">
+            <li>
+              <a class="px-3" href="#" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
+                {{ Auth::user()->name }} <i class="now-ui-icons users_single-02"></i>
+                
+                <a class="px-3" href="{{ route('logout') }}"
+                  onclick="event.preventDefault();
+                    document.getElementById('logout-form').submit();">
+                  Se déconnecter
                 </a>
-              </li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" v-pre>
-                    {{ Auth::user()->name }} <span class="caret"></span>
-                </a>
-
-                <ul class="dropdown-menu">
-                    <li>
-                        <a href="{{ route('logout') }}"
-                            onclick="event.preventDefault();
-                                     document.getElementById('logout-form').submit();">
-                            Se déconnecter
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                            {{ csrf_field() }}
-                        </form>
-                    </li>
-                </ul>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                  {{ csrf_field() }}
+                </form>
+              </a>
             </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#pablo">
-                  <i class="now-ui-icons users_single-02"></i>
-                  <p>
-                    <span class="d-lg-none d-md-block">Account</span>
-                  </p>
-                </a>
-              </li>
-            </ul>
-          </div>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
       <!-- End Navbar -->
       <div class="panel-header panel-header-lg">
         <canvas id="bigDashboardChart"></canvas>
       </div>
       <div class="content">
-          <div class="col-md-6">
+          <div class="col-md-responsive">
             <div class="card">
               <div class="card-header">
                 <h5 class="card-category">Tableau de bord</h5>
-                <h4 class="card-title"> Ajouter un produit</h4>
+                <h4 class="card-title d-flex justify-content-center">Ajouter un produit</h4>
               </div>
               <div class="panel-body">
-                <div class="table-responsive">
-                    <form class="col-sm-6" enctype="multipart/form-data" action="{{ url('admin.product') }}" method="post">
+                <div class="table-responsive d-flex justify-content-center">
+                    <form class="col-sm-6"  enctype="multipart/form-data" action="{{ route('create') }}" method="post">
                       {{ csrf_field() }}
-                      {{ method_field('PUT') }} <!--fonction qui valide la mis à jour -->
+                    
   
                       <div class="form-group">
-                          <label class="control-label">Nom</label>
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Tapez le nom du produit" >
+                        <b>Nom</b>
+                        <input type="text" class="form-control" name="name" id="name" placeholder="Tapez le nom du produit" required>
                       </div>
                       <div class="form-group">
-                        <label class="control-label">Slug</label>
-                        <input type="text" class="form-control" name="slug" id="slug" placeholder="Tapez le slug du produit" >
+                        <b>Slug</b>
+                        <input type="text" class="form-control" name="slug" id="slug" placeholder="Tapez le slug du produit" required>
                       </div>
                       <div class="form-group">
-                        <label class="control-label">Résumé</label>
-                        <input type="text" class="form-control" name="details" id="details" placeholder="Tapez le resumé du produit" >
+                       <b>Résumé</b>
+                        <input type="text" class="form-control" name="details" id="details" placeholder="Tapez le resumé du produit" required>
                       </div>
                       <div class="form-group">
-                        <label class="control-label">Prix</label>
-                        <input type="text" class="form-control" name="price" id="price" placeholder="Indiquez le prix">
+                       <b>Prix</b>
+                        <input type="text" class="form-control" name="price" id="price" placeholder="Indiquez le prix" required>
                       </div>
-                      <div class="form-group">
-                          <label class="control-label">Description</label>
-                          <textarea class="form-control" name="description" id="description" placeholder="Tapez la description complete du produit"></textarea>
+                      <div class="form-group mt-5">
+                        <b>Description</b>
+                        <textarea class="form-control mb-2" name="description" id="description" placeholder="Tapez la description complete du produit"></textarea required>
                       </div>
-                      <div class="form-group">
-                          <label class="control-label">Categorie</label>
-                          <input type="text" class="form-control" name="category_id" id="category_id" placeholder="Indiquez la categorie du produit">
+                      <div class="form-group mt-3">
+                        <b class="mr-3">Catégorie</b>
                       </div>
-                      <div class="form-group">
-                          <label>Image</label>
-                          <input type="file" name="image" id="image">
+                        <select name="category_id" id="category_id" required>
+                          <option value="">--Selectionnez la catégorie du produit--</option>
+                          <option value="1">Bain</option>
+                          <option value="2">Nuit</option>
+                          <option value="3">Soins</option>
+                          <option value="4">Divers</option>
+                          <option value="5">Cuisine</option>
+                          <option value="6">Accessoires poussette</option>
+                        </select>
+                      <div class="input-group mt-5 mb-2">
+                        <b>Image du produit</b>
                       </div>
-                      <div class="reset-button">
-                        <input type="submit" class="btn btn-success" value="Ajouter">
+                      <div class="mt-2">
+                        <input class="custum-file-input mb-4" type="file" name="image" id="image" required>
+                      </div>
+                      <div class="reset-button d-flex justify-content-center mt-5 mb-5">
+                        <input type="submit" class="btn btn-success mr-3" value="Ajouter">
+                        <a href="/productAdmin" type="submit" class="btn btn-danger">Retour</a>
                       </div>
                     </form>
                 </div>
@@ -180,9 +178,11 @@
       <footer class="footer">
         <div class=" container-fluid ">
           <div class="copyright" id="copyright">
-            &copy; <script>
+            &copy;
+            <script>
               document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
-            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+            </script>
+            Benjamin, Quentin, Brice et Herve by Coding Academy Lyon Octobre 2020
           </div>
         </div>
       </footer>
