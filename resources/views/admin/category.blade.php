@@ -33,6 +33,12 @@
               <p>Table de matières</p>
             </a>
           </li>
+          <li class=" {{ 'ordersAdmin' == request()->path() ? "active" : "" }}">
+            <a href="/ordersAdmin">
+              <i class="fas fa-truck"></i>
+              <p>Commandes</p>
+            </a>
+          </li>
           <li class=" {{ 'categoryAdmin' == request()->path() ? "active" : "" }}">
             <a href="/categoryAdmin">
               <i class="fas fa-book"></i>
@@ -163,7 +169,17 @@
           </div>
         </div>
       </div>
-      
+      <footer class="footer">
+        <div class=" container-fluid ">
+          <div class="copyright" id="copyright">
+            &copy;
+            <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>
+            Benjamin, Quentin, Brice et Herve by Coding Academy Lyon Octobre 2020
+          </div>
+        </div>
+      </footer>
     </div>
   </div>
   <!--   Core JS Files   -->

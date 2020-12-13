@@ -1,15 +1,14 @@
 @extends('layouts.master')
 
 @section('content')
-
-<!-- 
-    
-ESPACE POUR UN CARROUSEL / IMAGE DE FOND
-
--->
-
     <section class="login_box_area section_gap">
         <div class="container">
+            @if(session('status'))
+                <div class="alert alert-danger" role="alert">
+                    {{ session('status') }}
+                    <button type="button" class="close" data-dismiss="alert">x</button>
+                </div>
+            @endif
             <div class="row">
                 <div class="col-lg-6">
                     <div class="login_box_img">

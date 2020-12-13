@@ -14,4 +14,21 @@ class Product extends Model
     {
         return $this->belongsTo('App\Category');
     }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
+    }
+
+    public function getStarRating()
+    {
+        $count = $this->comments->count();
+        if ( empty($count)) {
+            return 0;
+        }
+        $starSum = $this->comments()->sum('rating');
+        $average = $starSum/$count;
+
+        return $average;
+    }
 }

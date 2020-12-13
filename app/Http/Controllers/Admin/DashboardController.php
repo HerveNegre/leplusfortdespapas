@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Category;
+use App\Order;
 
 
 class DashboardController extends Controller
@@ -80,6 +81,7 @@ class DashboardController extends Controller
     {
         return view('admin.product-add');
     }
+
 
     public function create(Request $request)
     {
@@ -209,5 +211,40 @@ class DashboardController extends Controller
         $categories = Category::find($id);
         $categories->delete();
         return redirect('/categoryAdmin')->with('status', 'Catégorie supprimée');
+    }
+
+
+    //Commandes
+    public function ordersAdmin()
+    {
+        $orders = Order::all();
+        return view('admin.orders', [
+            'orders' => $orders
+        ]);
+    }
+
+    public function ordersAdminEdit($id)
+    {
+        $orders = Order::find($id);
+        return view('admin.ordersEdit')->with('orders', $orders);
+    }
+
+    public function ordersAdminUpdate(Request $request, $id)
+    {
+        $orders               = Order::find($id);
+
+        $orders->id         = $request->input('id');
+        $orders->user_id         = $request->input('user_id');
+    
+        $orders->save();
+        
+        return redirect('/ordersAdmin')->with('orders', $orders)->with('success', 'Modification(s) effectuée(s)');
+    }
+
+    public function ordersAdminDelete($id)
+    {
+        $orders = Order::find($id);
+        $orders->delete();
+        return redirect('/ordersAdmin')->with('status', 'Commande supprimée');
     }
 }

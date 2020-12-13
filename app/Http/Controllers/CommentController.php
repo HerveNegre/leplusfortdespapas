@@ -2,13 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Product;
-use App\Category;
-use App\User;
-use App\Comment;
 use Illuminate\Http\Request;
 
-class ProductsController extends Controller
+class CommentController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +13,30 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categories = Category::all();
-        return view('products', [
-            'products'   => $products,
-            'categories' => $categories
-        ]);
+        //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+        auth()->user()->comment()->create($request->all());
+
+        return back();
     }
 
     /**
@@ -31,16 +45,9 @@ class ProductsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($slug)
+    public function show($id)
     {
-        $product  = Product::where('slug', $slug)->firstOrFail();
-        $user     = User::all();
-        $message  = Comment::all();
-        return view('singleProduct', [
-            'product'  => $product,
-            'user'     => $user,
-            'message'  => $message
-        ]);
+        //
     }
 
     /**
@@ -76,6 +83,4 @@ class ProductsController extends Controller
     {
         //
     }
-
-
 }

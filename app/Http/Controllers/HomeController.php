@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Mail\ContactFormMail;
 use App\Product;
 use App\User;
+use App\Comment;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -64,5 +65,5 @@ class HomeController extends Controller
     public function orders()
     {
         return view('orders');
-    }  
+    }
 }

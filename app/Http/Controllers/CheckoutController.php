@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\App;
 use Gloudemans\Shoppingcart\Facades\Cart;
 use App\Order;
 use App\OrderProduct;
+use App\Mail\OrderMail;
+use Illuminate\Support\Facades\Mail;
 
 class CheckoutController extends Controller
 {
@@ -38,33 +40,32 @@ class CheckoutController extends Controller
                 ]
             ]);
 
-            //envoie des données de la commande dans la db
-            //  $order = Order::create([
-            //     'user_id' => auth()->user() ? auth()->user()->id : null,
-            //     'first_name'        => $request->first_name,
-            //     'last_name'         => $request->last_name,
-            //     'phone'             => $request->phone,
-            //     'email'             => $request->email,
-            //     'delivery_street'   => $request->delivery_street,
-            //    'delivery_street2'   => $request->delivery_street2,
-            //     'delivery_zip_code' => $request->delivery_zip_code,
-            //     'delivery_city'     => $request->delivery_city,
-            //    'delivery_country'   => $request->delivery_country,
-            //     'bill_street'       => $request->bill_street,
-            //     'bill_street2'      => $request->bill_street2,
-            //     'bill_zip_code'     => $request->bill_zip_code,
-            //     'bill_city'         => $request->bill_city,
-            //     'bill_country'      => $request->bill_country
-            //  ]);
+            // envoie des données de la commande dans la db
+             $order = Order::create([
+                'user_id' => auth()->user() ? auth()->user()->id : null,
+                'first_name'        => $request->first_name,
+                'last_name'         => $request->last_name,
+                'phone'             => $request->phone,
+                'email'             => $request->email,
+                'delivery_street'   => $request->delivery_street,
+               'delivery_street2'   => $request->delivery_street2,
+                'delivery_zip_code' => $request->delivery_zip_code,
+                'delivery_city'     => $request->delivery_city,
+               'delivery_country'   => $request->delivery_country,
+                'bill_street'       => $request->bill_street,
+                'bill_street2'      => $request->bill_street2,
+                'bill_zip_code'     => $request->bill_zip_code,
+                'bill_city'         => $request->bill_city,
+                'bill_country'      => $request->bill_country
+             ]);
 
-            //  foreach (Cart::content() as $item) {
-            //      OrderProduct::create([
-            //         'order_id'     => $order->id,
-            //         'product_name' => $item->model->id,
-            //         'quantity'     => $item->qty
-            //      ]);
-            //  }
-
+             foreach (Cart::content() as $item) {
+                 OrderProduct::create([
+                    'order_id'     => $order->id,
+                    'product_id' => $item->model->id,
+                    'quantity'     => $item->qty,
+                 ]);
+             }
 
             return redirect()->route('checkout.success')->with('success', 'Votre paiement a été validé !');
 
