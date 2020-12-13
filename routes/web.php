@@ -19,6 +19,7 @@ Route::post('/contact', 'HomeController@contactStore')->name('contactStore');
 
 //Produits
 Route::get('/products', 'ProductsController@index')->name('products');
+Route::get('/search', 'ProductsController@search')->name('products.search');
 Route::get('/products/{product}', 'ProductsController@show')->name('singleProduct');
 
 
@@ -53,12 +54,14 @@ Route::get('/logout', function () {
 })->name('logout');
 
 // //User Auth
-// Route::group(['middleware' => ['auth']], function () {
+
+// Route::group(['middleware' => ['auth', 'isUser']], function () {
     Route::get('/', 'HomeController@home')->name('home');
     Route::get('/myProfile', 'HomeController@myProfile')->name('myProfile');
     Route::post('/myProfileUpdate', 'HomeController@myProfileUpdate')->name('myProfileUpdate');
     Route::resource('/comments', 'CommentController');
 // });
+
 
 //Admin Auth
 Route::group(['middleware' => ['auth', 'admin']], function () {

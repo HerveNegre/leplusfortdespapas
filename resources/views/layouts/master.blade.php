@@ -16,6 +16,14 @@
 	<link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/themify-icons.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/materialdesignicons.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/jquery.simpleLens.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/jquery-ui.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/meanmenu.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/nivo-slider.css') }}">
+	<link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/nice-select.css') }}">
 	<link rel="stylesheet" href="{{ asset('css/nouislider.min.css') }}">
@@ -47,6 +55,19 @@
 	<script src="{{ asset('js/nouislider.min.js') }}"></script>
 	<script src="{{ asset('js/jquery.magnific-popup.min.js') }}"></script>
 	<script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+	<script src="{{ asset('js/vendor/modernizr-2.8.3.min.js') }}"></script>
+	{{-- <script src="{{ asset('js/vendor/jquery-1.12.3.min.js') }}"></script> --}}
+	<script src="{{ asset('js/jquery.meanmenu.js') }}"></script>
+	<script src="{{ asset('js/countdown.js') }}"></script>
+	<script src="{{ asset('js/jquery.nivo.slider.pack.js') }}"></script>
+	<script src="{{ asset('js/jquery.simpleLens.min.js') }}"></script>
+	<script src="{{ asset('js/jquery-ui.min.js') }}"></script>
+	<script src="{{ asset('js/load-more.js') }}"></script>
+	<script src="{{ asset('js/plugins.js') }}"></script>
+	<script src="{{ asset('js/main.js') }}"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@2.4.21/dist/js/splide.min.js"></script>
+	
+
 	
 	<!--gmaps Js-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>

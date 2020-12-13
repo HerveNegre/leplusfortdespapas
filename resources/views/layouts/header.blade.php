@@ -3,7 +3,7 @@
 		<nav class="navbar navbar-expand-lg navbar-light main_box">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
-				<a class="navbar-brand logo_h" href="index.html"><img src="" alt="logo"></a>
+				<a class="logo_papa-collapse" top="20px" href="{{ route('home') }}"><img src="{{ asset('images/logo_papa_light.png') }}"  alt="logo"></a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="icon-bar"></span>
@@ -14,14 +14,18 @@
 				<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 					<ul class="nav navbar-nav menu_nav mr-auto ml-5">
 						<li class="nav-item">
-							<a class="nav-link" href="{{ route('home') }}">
-								<i class="fas fa-home mr-1"></i>
+
+							<a class="nav-link"  style="color:#f6bc30" href="{{ route('home') }}">
+								<i class="fas fa-home"></i>
+
 								Accueil
 							</a>
 						</li>
 						<li class="nav-item submenu dropdown">
-							<a href="{{ route('products') }}" class="nav-link">
-								<i class="fas fa-shopping-bag mr-1"></i>
+
+							<a style="color:#154c7b" href="{{ route('products') }}" class="nav-link">
+								<i class="fas fa-shopping-bag"></i>
+
 								Produits
 							</a>
 						</li>
@@ -31,9 +35,6 @@
 								Contact
 							</a>
 						</li>
-					</ul>
-
-					<ul class="nav navbar-nav menu_nav ml-auto">
 						@guest
 							<li class="nav-item">
 								<a class="nav-link" href="{{ route('login') }}">
@@ -68,8 +69,10 @@
 							</li>
 						@endguest
 							<li class="nav-item">
-								<a class="nav-link" href="{{ route('cart') }}">
-									<i class="fas fa-shopping-cart mr-1"></i>
+
+								<a class="nav-link" style="color:#1b838c" href="{{ route('cart') }}">
+									<i class="fas fa-shopping-cart"></i>
+
 									Mon panier
 									@if(Cart::instance('default')->count() > 0)
 										<span class="badge badge-warning">{{ Cart::instance('default')->count() }}</span>
@@ -77,10 +80,12 @@
 								</a>
 							</li>
 					</ul>
+
 				</div>
 			</div>
 		</nav>
 	</div>
+	
 	{{-- <div class="search_input" id="search_input_box">
 		<div class="container">
 			<form class="d-flex justify-content-between">
